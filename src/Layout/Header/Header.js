@@ -61,7 +61,7 @@ function Head() {
   };
 
   return (
-    <header className="">
+    <header className="absolute w-full">
       <div className="flex items-center w-full fixed w-full px-10 pt-10 z-50">
         <div>
           <h5>Levan Natsvlishvili</h5>
