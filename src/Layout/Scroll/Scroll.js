@@ -33,12 +33,12 @@ const throttle = (callback, time) => {
   }, time);
 };
 
-function SectionScrolling({ children }) {
+function SectionScrolling(props) {
+  const { children, currView, setCurrView } = props;
   const [loading, setLoading] = useState(false);
+  console.log(currView);
 
-  const [currView, setCurrView] = useState(0);
   const [direction, setDirection] = useState('');
-  const [page, setPage] = useState('blue');
 
   function scrollDown(page) {
     if (currView === pages.length - 1) return;

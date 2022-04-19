@@ -53,15 +53,24 @@ const NavMenu = styled.nav`
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `;
 
-function Head() {
+function Head(props) {
+  const { currView, setCurrView } = props;
   const [navMenu, setNavMenu] = useState(false);
 
   const handleNav = () => {
     setNavMenu(!navMenu);
   };
 
+  const pages = [0, 1, 2, 3];
+
+  const handleNavigation = (val) => {
+    setCurrView(val);
+    const axis = `translateY(-${val}00vh)`;
+    document.getElementById('wrapper').style.transform = axis;
+  };
+
   return (
-    <header className="absolute w-full">
+    <header className="absolute w-full z-10">
       <div className="flex items-center w-full fixed w-full px-10 pt-10 z-50">
         <div>
           <h5>Levan Natsvlishvili</h5>
@@ -91,11 +100,40 @@ function Head() {
           </div>
         </div>
       </div>
-      <NavMenu
-        className={clsx('ease-linear', {
-          '-translate-y-full': !navMenu,
-        })}
-      ></NavMenu>
+      <div
+        className={clsx(
+          'navmenu ease-linear flex justify-center items-center text-8xl text-center',
+          {
+            '-translate-y-full': !navMenu,
+          }
+        )}
+      >
+        <ul>
+          <li className="my-10">
+            <a href="#">About Me</a>
+          </li>
+          <li className="my-10">
+            <a href="#">Projects</a>
+          </li>
+          <li className="my-10">
+            <a href="#">Skill Set</a>
+          </li>
+        </ul>
+      </div>
+      <div className="fixed top-1/2 transform -translate-y-1/2 ml-10 border-white">
+        {pages.map((page) => (
+          <div
+            className="py-2 my-4 cursor-pointer"
+            onClick={() => handleNavigation(page)}
+          >
+            <div
+              className={clsx('bg-white h-0.5 w-6 duration-300 ', {
+                'nav-active': currView === page,
+              })}
+            ></div>
+          </div>
+        ))}
+      </div>
     </header>
   );
 }
