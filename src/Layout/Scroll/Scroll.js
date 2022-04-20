@@ -117,7 +117,7 @@ function SectionScrolling(props) {
   }, [direction]);
 
   return (
-    <div id="wrapper" className="scroll-container">
+    <div id="wrapper" className="scroll-container relative z-10">
       {children}
     </div>
   );

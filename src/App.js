@@ -1,12 +1,11 @@
 import './Styles/global.css';
-import 'styles.scss';
 import Layout from 'Layout';
-import Home from 'Pages/Home';
+import Pages from 'Pages';
 
 function App() {
   return (
     <Layout>
-      <Home />
+      <Pages />
     </Layout>
   );
 }

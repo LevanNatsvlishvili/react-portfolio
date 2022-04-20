@@ -34,18 +34,6 @@ section {
   justify-content: center;
   scroll-behavior: smooth;
 }
-/* .red {
-  background: red;
-}
-.blue {
-  background: blue;
-}
-.green {
-  background: green;
-}
-.purple {
-  background: purple;
-} */
 
 html,
 body {
@@ -62,7 +50,68 @@ body {
   );
 }
 
+/* wrapper */
+
+.star-container::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: url(/public/images/background/star.svg);
+  transition: 3000ms;
+}
+.star-1::before {
+  transform: rotate(30deg);
+}
+.star-2::before {
+  transform: rotate(60deg);
+}
+.star-3::before {
+  transform: rotate(90deg);
+}
+
 /* nav menu styles */
+.navbutton {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+}
+.navbutton::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  -webkit-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  bottom: 0;
+}
+.navbutton::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  -webkit-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  top: 0;
+}
+.navbutton-active::before {
+  bottom: 50% !important;
+  transform: rotate(-45deg) translate3d(0, 50%, 0) !important;
+}
+.navbutton-active::after {
+  top: 50% !important;
+  transform: rotate(45deg) translate3d(0, -50%, 0) !important;
+}
+
 .navmenu {
   background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
   height: 100vh;
@@ -98,3 +147,5 @@ body {
 .nav-active {
   width: 2.5rem !important;
 }
+
+/* Back Hole */
