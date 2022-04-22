@@ -1,12 +1,15 @@
 import './Styles/global.css';
 import Layout from 'Layout';
 import Pages from 'Pages';
+import { StoreContextProvider } from 'Store/Context';
 
 function App() {
   return (
-    <Layout>
-      <Pages />
-    </Layout>
+    <StoreContextProvider>
+      <Layout>
+        <Pages />
+      </Layout>
+    </StoreContextProvider>
   );
 }
 

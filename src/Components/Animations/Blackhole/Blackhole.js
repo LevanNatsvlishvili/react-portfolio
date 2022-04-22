@@ -1,14 +1,20 @@
 import React from 'react';
 
-function Blackhole() {
+function Blackhole({ shouldDisplay }) {
   return (
-    <bh-container>
-      <bh-doppler></bh-doppler>
-      <bh-photon-ring></bh-photon-ring>
-      <bh-accretion></bh-accretion>
-      <bh-backdrop></bh-backdrop>
-      <bh-shadow></bh-shadow>
-    </bh-container>
+    <div
+      className={`absolute top-0 left-1/4 -z-10 ${
+        shouldDisplay ? 'blackhole-load' : ''
+      }`}
+    >
+      <bh-container>
+        <bh-doppler></bh-doppler>
+        <bh-photon-ring></bh-photon-ring>
+        <bh-accretion></bh-accretion>
+        <bh-backdrop></bh-backdrop>
+        <bh-shadow></bh-shadow>
+      </bh-container>
+    </div>
   );
 }
 

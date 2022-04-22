@@ -1,21 +1,24 @@
 import Blackhole from 'Components/Animations/Blackhole';
+import FrontText from 'Components/Animations/FrontText';
 import React from 'react';
+import useStore from 'Store/Context';
 
 function Welcome() {
+  const { currView } = useStore();
   return (
-    <div className="w-full h-full z-2">
-      <div className="h-full flex items-center p-44 flex-column">
-        <h1 className="text-7xl">
-          Levan <br />
-          Natsvlishvili
-        </h1>
-        <h2 className="text-7xl">Front-end developer</h2>
+    <section>
+      <div className="w-full absolute left-40">
+        <FrontText
+          shouldDisplay={currView === 0}
+          heading1="Levan"
+          heading2="Natsvlishvili"
+          bottom="Front end developer"
+        />
       </div>
-
-      <div className="absolute top-0 left-1/4">
-        <Blackhole />
+      <div>
+        <Blackhole shouldDisplay={currView === 0} />
       </div>
-    </div>
+    </section>
   );
 }
 

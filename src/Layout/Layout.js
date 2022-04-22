@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Scroll from './Scroll';
 import Header from './Header';
+import useStore from 'Store/Context';
 
 const Layout = ({ children }) => {
-  const [currView, setCurrView] = useState(0);
-
+  const { currView, setCurrView } = useStore();
   return (
     <div className={`star-container star-${currView}`}>
       <Header currView={currView} setCurrView={setCurrView} />
