@@ -18,7 +18,11 @@ function About() {
           <Button>Read More</Button>
         </div>
       </div>
-      <div className="w-1/2 h-1/2 ml-96 relative before:absolute before:w-full before:h-full before:bg-deep-blue before:opacity-30">
+      <div
+        className={`w-1/2 h-1/2 ml-100 relative glass-effect ${
+          currView === 1 ? 'glass-effect-active' : ''
+        } `}
+      >
         <img
           className="object-cover w-full h-full rounded-lg"
           src={`${process.env.PUBLIC_URL}images/me.jpg`}

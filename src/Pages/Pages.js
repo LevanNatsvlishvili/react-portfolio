@@ -15,7 +15,7 @@ function Pages() {
     <div className="relative z-index-1">
       <Welcome />
       <About />
-      <section className="green">3</section>
+      <Projects />
       <section className="purple">4</section>
     </div>
   );

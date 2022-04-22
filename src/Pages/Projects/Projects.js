@@ -1,22 +1,34 @@
+import FrontText from 'Components/Animations/FrontText';
+import Button from 'Components/Button';
+import Image from 'Components/Image';
 import React from 'react';
+import useStore from 'Store/Context';
+import Slider from './Slider';
 
-function Welcome() {
+function About() {
+  const { currView } = useStore();
+
   return (
-    <section className="w-full h-full relative">
-      <div class="animated-title">
-        <div class="text-top">
-          <div className="text-7xl leading-tight px-44">
-            <h1 className="leading-tight text-7xl">Levan</h1>
-            <h2 className="leading-tight text-7xl">Natsvlishvili</h2>
-          </div>
-        </div>
-        <p className="divider" />
-        <div class="text-bottom">
-          <div className="text-1xl">Front-end developer</div>
+    <section>
+      <div className="absolute left-40 z-10">
+        <FrontText
+          shouldDisplay={currView === 2}
+          heading1="Projects"
+          bottom="Portfolio"
+        />
+        <div>
+          <Button>Read More</Button>
         </div>
       </div>
+      {/* <div className="flex relative glass-effect">
+        <Image src="images/me.jpg" />
+        <Image src="images/me.jpg" />
+        <Image src="images/me.jpg" />
+        <Image src="images/me.jpg" />
+      </div> */}
+      <Slider />
     </section>
   );
 }
 
-export default Welcome;
+export default About;

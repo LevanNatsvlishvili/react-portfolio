@@ -36,13 +36,12 @@ const throttle = (callback, time) => {
 function SectionScrolling(props) {
   const { children, currView, setCurrView } = props;
   const [loading, setLoading] = useState(false);
-  console.log(currView);
 
   const [direction, setDirection] = useState('');
 
   function scrollDown(page) {
     if (currView === pages.length - 1) return;
-    console.log('scrolled');
+    // console.log('scrolled');
     setCurrView(currView + 1);
     const axis = `translateY(-${currView + 1}00vh)`;
     document.getElementById('wrapper').style.transform = axis;
@@ -50,7 +49,7 @@ function SectionScrolling(props) {
 
   function scrollUp(page) {
     if (currView === 0) return;
-    console.log('scrolled');
+    // console.log('scrolled');
 
     setCurrView(currView - 1);
     const axis = `translateY(-${currView - 1}00vh)`;

@@ -3,10 +3,8 @@ import React from 'react';
 
 function HeaderContactLinks(props) {
   const { navMenu, setNavMenu } = props;
-  console.log(props);
 
   const handleNav = () => {
-    console.log(navMenu);
     setNavMenu(!navMenu);
   };
 
