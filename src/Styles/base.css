@@ -246,75 +246,19 @@ button span:nth-child(4) {
 
 /* Slider */
 
-div.highway-slider {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 150px;
-}
-div.highway-slider div.highway-barrier {
-  overflow: hidden;
-  position: relative;
-}
-div.highway-slider ul.highway-lane {
-  display: flex;
-  height: 100%;
-}
-div.highway-slider ul.highway-lane li.highway-car {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  color: #343434;
-}
-@-webkit-keyframes translatestf {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-500%);
-  }
-}
-@keyframes translatestf {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-500%);
-  }
-}
-#stffull div.highway-barrier ul.highway-lane {
-  width: 500%;
-}
-#stffull div.highway-barrier ul.highway-lane li.highway-car {
-  -webkit-animation: translatestf 30s linear infinite;
-  animation: translatestf 30s linear infinite;
-}
-#stffull div.highway-barrier ul.highway-lane li.highway-car h4 {
-  font-size: 28px;
-}
 @-webkit-keyframes translateinfinite {
   100% {
-    transform: translateX(calc(-600px * 4));
+    transform: translateX(calc(-100%));
   }
 }
 @keyframes translateinfinite {
   100% {
-    transform: translateX(calc(-600px * 4));
+    transform: translateX(calc(-100%));
   }
 }
 
-#infinite div.highway-barrier ul.highway-lane {
-  width: calc(180px * 24);
-}
-#infinite div.highway-barrier ul.highway-lane li.highway-car {
-  width: 180px;
-  -webkit-animation: translateinfinite 15s linear infinite;
-  animation: translateinfinite 15s linear infinite;
-}
-
 .slider-auto {
-  -webkit-animation: translateinfinite 15s linear infinite;
-  animation: translateinfinite 15s linear infinite;
+  -webkit-animation: translateinfinite 50s linear infinite;
+  animation: translateinfinite 50s linear infinite;
+  /* width: calc(600px * 4.5); */
 }

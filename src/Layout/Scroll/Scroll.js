@@ -63,7 +63,10 @@ function SectionScrolling(props) {
     { name: 'purple', axis: 'translateY(-300vh)' },
   ];
 
+  var globalLoader = false;
+
   const MouseWheelHandler = (e) => {
+    console.log(e);
     if (loading) return;
     var event = window.event || e;
     var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
@@ -96,8 +99,23 @@ function SectionScrolling(props) {
   const handleThrottle = throttler((e) => MouseWheelHandler(e));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   // const debounceHandler = useMemo(throttle(MouseWheelHandler(), 500), []);
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowUp') {
+      if (currView === 0) return;
+      setDirection('up');
+      setLoading(true);
+    }
+    if (e.key === 'ArrowDown') {
+      if (currView === pages - 1) return;
+      setDirection('down');
+      setLoading(true);
+    }
+  };
+
   if (!loading) {
     document.body.addEventListener('mousewheel', handleThrottle, false);
+    document.body.addEventListener('keydown', handleKeyDown, false);
     document.body.addEventListener('DOMMouseScroll', handleThrottle, false);
   }
 

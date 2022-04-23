@@ -1,21 +1,18 @@
 import Image from 'Components/Image';
 import React, { useEffect, useState } from 'react';
 
-function Slider() {
+function Slider(props) {
+  const { currView } = props;
   const [curr, setCurr] = useState(0);
   const [currList, setCurrList] = useState([
     { id: 0, img: 'images/projects/clothingstore.png' },
     { id: 1, img: 'images/projects/dataninja.png' },
     { id: 2, img: 'images/projects/tourism.png' },
     { id: 3, img: 'images/projects/clothingstore.png' },
-    // { id: 4, img: 'images/projects/dataninja.png' },
-    // { id: 5, img: 'images/projects/tourism.png' },
-    // { id: 6, img: 'images/projects/clothingstore.png' },
-    // { id: 7, img: 'images/projects/dataninja.png' },
-    // { id: 8, img: 'images/projects/tourism.png' },
-    // { id: 9, img: 'images/projects/clothingstore.png' },
-    // { id: 10, img: 'images/projects/dataninja.png' },
-    // { id: 11, img: 'images/projects/tourism.png' },
+    { id: 4, img: 'images/projects/dataninja.png' },
+    { id: 5, img: 'images/projects/tourism.png' },
+    { id: 6, img: 'images/projects/clothingstore.png' },
+    { id: 7, img: 'images/projects/dataninja.png' },
   ]);
 
   useEffect(() => {
@@ -48,40 +45,24 @@ function Slider() {
   console.log(currList);
 
   return (
-    <div className="flex relative glass-effect before:opacity-60">
+    <div
+      className={`w-1/2 h-1/2 ml-100 relative glass-effect overflow-hidden rounded-xl ${
+        currView === 1 ? 'glass-effect-active' : ''
+      } `}
+    >
       <div
-        style={{ transform: `translateX(-${curr}px)` }}
-        className="flex transition slider-auto "
+        style={{ width: `${currList.length}00%` }}
+        className="flex transition slider-auto h-full"
       >
         {currList.map((image, index) => (
           <Image
             // style={{ transform: `translateX(100%)` }}
-            className="w-600px h-100 "
+            className="w-full h-full "
             key={index}
             src={image.img}
           />
         ))}
       </div>
-      {/* <div className="slider-section">
-        <div id="infinite" class="highway-slider">
-          <div class="container highway-barrier">
-            <ul class="highway-lane">
-              {currList.map((image, index) => (
-                <li class="highway-car">
-                  <span class="fab ">
-                    <Image
-                      // style={{ transform: `translateX(100%)` }}
-                      className="w-600px h-100 "
-                      key={index}
-                      src={image.img}
-                    />
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }
