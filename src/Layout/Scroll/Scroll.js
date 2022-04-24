@@ -63,10 +63,7 @@ function SectionScrolling(props) {
     { name: 'purple', axis: 'translateY(-300vh)' },
   ];
 
-  var globalLoader = false;
-
   const MouseWheelHandler = (e) => {
-    console.log(e);
     if (loading) return;
     var event = window.event || e;
     var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));

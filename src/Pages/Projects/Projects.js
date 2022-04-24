@@ -26,7 +26,7 @@ function About() {
         <Image src="images/me.jpg" />
         <Image src="images/me.jpg" />
       </div> */}
-      <Slider />
+      <Slider shouldDisplay={currView === 2} />
     </section>
   );
 }

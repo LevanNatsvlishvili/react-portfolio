@@ -11,7 +11,7 @@
     0px 0px 10px rgba(0, 0, 0, 0.15);
   background: rgb(2, 0, 36);
   background: linear-gradient(
-    45deg,
+    125deg,
     rgba(2, 0, 36, 0) 5%,
     rgba(255, 255, 255, 0.5) 6%,
     rgba(255, 255, 255, 0) 9%,
@@ -19,11 +19,10 @@
     rgba(255, 255, 255, 0) 17%,
     rgba(255, 255, 255, 0.5) 19%,
     rgba(255, 255, 255, 0) 21%,
-    rgba(255, 255, 255, 0.5) 90%,
-    rgba(255, 255, 255, 0) 91%,
-    rgba(255, 255, 255, 0.5) 94%,
-    rgba(255, 255, 255, 0) 95%
+    rgba(255, 255, 255, 0.25) 39%,
+    rgba(255, 255, 255, 0) 41%
   );
+
   background-size: 150%;
   background-position: right;
   transition: 1.5s;
