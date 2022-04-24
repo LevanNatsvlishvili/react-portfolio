@@ -1,6 +1,5 @@
 import FrontText from 'Components/Animations/FrontText';
 import Button from 'Components/Button';
-import Image from 'Components/Image';
 import React from 'react';
 import useStore from 'Store/Context';
 
@@ -19,15 +18,7 @@ function Skills() {
           <Button>Read More</Button>
         </div>
       </div>
-      {/* <div className="w-1/2 h-1/2 ml-100 relative">
-        <div class="circles">
-          <div></div>
-          <div></div>
-          <div></div>
-          <span></span>
-        </div>
-      </div> */}
-      <div className="atom absolute w-100 h-100 left-1/2">
+      <div className="atom absolute w-1/2 h-3/4 left-1/2">
         <div class="center"></div>
 
         <article class="ring1">

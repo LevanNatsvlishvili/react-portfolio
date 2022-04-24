@@ -4,7 +4,7 @@ import React from 'react';
 function HeaderScrollNav(props) {
   const { currView, setCurrView } = props;
 
-  const pages = [0, 1, 2, 3];
+  const pages = [0, 1, 2, 3, 4];
 
   const handleNavigation = (val) => {
     setCurrView(val);

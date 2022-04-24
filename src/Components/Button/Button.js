@@ -2,7 +2,7 @@ import React from 'react';
 
 function Button({ children }) {
   return (
-    <button className="px-4 py-2">
+    <button className="px-4 py-2 neon-button">
       <span></span>
       <span></span>
       <span></span>

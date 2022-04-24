@@ -20,12 +20,6 @@ function About() {
           <Button>Read More</Button>
         </div>
       </div>
-      {/* <div className="flex relative glass-effect">
-        <Image src="images/me.jpg" />
-        <Image src="images/me.jpg" />
-        <Image src="images/me.jpg" />
-        <Image src="images/me.jpg" />
-      </div> */}
       <Slider shouldDisplay={currView === 2} />
     </section>
   );

@@ -1,4 +1,4 @@
-button {
+.neon-button {
   position: relative;
   display: inline-block;
   padding: 25px 30px;
@@ -9,7 +9,7 @@ button {
   overflow: hidden;
   filter: hue-rotate(110deg);
 }
-button:hover {
+.neon-button:hover {
   background: #03e9f4;
   color: #050801;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
@@ -17,11 +17,11 @@ button:hover {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-button span {
+.neon-button span {
   position: absolute;
   display: block;
 }
-button span:nth-child(1) {
+.neon-button span:nth-child(1) {
   top: 0;
   left: 0;
   width: 100%;
@@ -38,7 +38,7 @@ button span:nth-child(1) {
     left: 100%;
   }
 }
-button span:nth-child(2) {
+.neon-button span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -56,7 +56,7 @@ button span:nth-child(2) {
     top: 100%;
   }
 }
-button span:nth-child(3) {
+.neon-button span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 100%;
@@ -75,7 +75,7 @@ button span:nth-child(3) {
   }
 }
 
-button span:nth-child(4) {
+.neon-button span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;

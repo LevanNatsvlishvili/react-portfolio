@@ -18,7 +18,7 @@ function Pages() {
       <About />
       <Projects />
       <Skills />
-      <section className="purple">4</section>
+      <Contact />
     </div>
   );
 }

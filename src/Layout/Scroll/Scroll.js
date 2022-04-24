@@ -57,10 +57,11 @@ function SectionScrolling(props) {
   }
 
   const pages = [
-    { name: 'blue', axis: 'translateY(0vh)' },
-    { name: 'red', axis: 'translateY(-100vh)' },
-    { name: 'green', axis: 'translateY(-200vh)' },
-    { name: 'purple', axis: 'translateY(-300vh)' },
+    { name: 'welcome', axis: 'translateY(0vh)' },
+    { name: 'about', axis: 'translateY(-100vh)' },
+    { name: 'projects', axis: 'translateY(-200vh)' },
+    { name: 'skills', axis: 'translateY(-300vh)' },
+    { name: 'contact', axis: 'translateY(-400vh)' },
   ];
 
   const MouseWheelHandler = (e) => {
