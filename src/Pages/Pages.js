@@ -5,12 +5,6 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Welcome from './Welcome';
 
-const pageList = [<Welcome />, <About />];
-
-// const RenderPages = () => (
-//   <div className="relative z-index-1">{pageList.map((page) => page)}</div>
-// );
-
 function Pages() {
   return (
     <div className="relative z-index-1">

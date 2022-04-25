@@ -1,7 +1,4 @@
-import FrontText from 'Components/Animations/FrontText';
-import Button from 'Components/Button';
 import React, { useEffect, useRef, useState } from 'react';
-import useStore from 'Store/Context';
 import FormButton from './FormButton';
 
 class CleanForm {
@@ -59,6 +56,8 @@ function Contact(props) {
     setTimeout(() => {
       document.getElementById('svgowl').classList.remove('flying-active');
     }, 1000);
+    if (submited) setSubmited(new CleanForm());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shouldDisplay]);
 
   return (

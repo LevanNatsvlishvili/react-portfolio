@@ -10,7 +10,7 @@ function Skills() {
     <section>
       <div className="absolute left-40 z-10">
         <FrontText
-          shouldDisplay={currView === 2}
+          shouldDisplay={currView === 3}
           heading1="Skills"
           bottom="Tech Stack"
         />

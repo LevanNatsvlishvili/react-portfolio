@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { useState } from 'react';
 import HeaderContactLinks from './HeaderContactLinks';
 import HeaderNavigation from './HeaderNavigation';
@@ -12,7 +11,7 @@ function Head(props) {
     <header className="fixed w-full z-20">
       <HeaderContactLinks navMenu={navMenu} setNavMenu={setNavMenu} />
 
-      {<HeaderNavigation navMenu={navMenu} />}
+      <HeaderNavigation navMenu={navMenu} />
 
       <HeaderScrollNav currView={currView} setCurrView={setCurrView} />
     </header>

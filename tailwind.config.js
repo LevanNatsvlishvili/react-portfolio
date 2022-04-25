@@ -9,6 +9,9 @@ module.exports = {
         100: '30rem',
         '600px': '600px',
       },
+      borderRadius: {
+        '1/2': '50%',
+      },
     },
   },
   plugins: [],

@@ -14,35 +14,19 @@ class CleanForm {
 function Contact() {
   const { currView } = useStore();
 
-  const [form, setForm] = useState(new CleanForm());
-  const [submited, setSubmited] = useState(false);
-
-  const handleChange = (e) => {
-    if (submited) setSubmited(false);
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    setForm(new CleanForm());
-    setSubmited(true);
-  };
-
   return (
     <section>
       <div className="absolute left-40 z-10">
         <FrontText
           shouldDisplay={currView === 4}
           heading1="Contact"
-          bottom="Tech Stack"
+          bottom="L.nats51@yahoo.com"
         />
         <div>
           <Button>Read More</Button>
         </div>
       </div>
-      <Form shouldDisplay={currView === 4} onClick={handleSubmit} />
+      <Form shouldDisplay={currView === 4} />
     </section>
   );
 }

@@ -12,7 +12,7 @@ function About() {
         <FrontText
           shouldDisplay={currView === 1}
           heading1="About Me"
-          bottom="Design, development and more..."
+          bottom="Experience, Work and more..."
         />
         <div>
           <Button>Read More</Button>
