@@ -19,15 +19,15 @@ function Skills() {
         </div>
       </div>
       <div className="atom absolute w-1/2 h-3/4 left-1/2">
-        <div class="center"></div>
+        <div className="center"></div>
 
-        <article class="ring1">
+        <article className="ring1">
           <div></div>
         </article>
-        <article class="ring2">
+        <article className="ring2">
           <div></div>
         </article>
-        <article class="ring3">
+        <article className="ring3">
           <div></div>
         </article>
       </div>

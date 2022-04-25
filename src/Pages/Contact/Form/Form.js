@@ -11,8 +11,8 @@ class CleanForm {
   }
 }
 
-function Contact() {
-  const { currView } = useStore();
+function Contact(props) {
+  const { shouldDisplay } = props;
   const [viewBox, setViewBox] = useState('0 0 0 0');
   const formRef = useRef();
 
@@ -41,7 +41,25 @@ function Contact() {
   const handleSubmit = () => {
     setForm(new CleanForm());
     setSubmited(true);
+    setTimeout(() => {
+      document.getElementById('svgowl').classList.add('flying-active');
+    }, 2000);
   };
+
+  useEffect(() => {
+    if (shouldDisplay) {
+      setTimeout(() => {
+        document.getElementById('svgowl').classList.add('activePage');
+      }, 500);
+      return;
+    }
+    setTimeout(() => {
+      document.getElementById('svgowl').classList.remove('activePage');
+    }, 500);
+    setTimeout(() => {
+      document.getElementById('svgowl').classList.remove('flying-active');
+    }, 1000);
+  }, [shouldDisplay]);
 
   return (
     <>
@@ -57,17 +75,17 @@ function Contact() {
         className="signup-form right-36 w-1/3 py-8 px-8 rounded-lg z-20 absolute flex-col flex justify-center"
       >
         <svg
-          className="absolute left-0 -z-10"
+          className="owl-root absolute left-0 -z-10"
           id="svgowl"
           xmlns="http://www.w3.org/2000/svg"
           viewBox={viewBox}
         >
-          <g cy="22" className="owl">
+          <g className="owl">
             <path
               className="owl_body"
               stroke="#000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               cy="22"
               stroke-height="15"
               d="M252.9 67.1c1.9 2 3.1 3.9 5.7 5.4.7.6 1.4 1.1 2.3 1.5-1.8 6.1-1.8 12.7-.2 18.8.6 2.2 1.7 4.7 3.8 5.9.6.4 1.7.5 2.3.2.7 1.8 2.2 3.2 4.3 3.6 1.5.3 2.7-.2 3.5-1.2 0 .1.1.1.1.1 1.8 1.3 4 2.3 6.2 1.4 1-.4 1.8-1.2 2.2-2.2 1.3 1.1 3.1 1.4 4.5.3.9-.7 1.5-2 1.5-3.2.1 0 .3-.1.3-.3.9-1.8 1.9-3.5 2.4-5.5.5-1.9.5-3.8.4-5.8-.2-4.5-.6-9.3-1.2-13.3 2.5-1 4.3-3.4 4.3-3.4s1.8-1.5 3.5-4.3 3.1-10 3.8-11.9c.9-2.3 1.3-5 1.4-7.5 0-4.6-1.6-10.4-5-13.7 1-1.2 1.5-2.9 2.1-4.2.7-1.6 1.2-3.3 1.4-5 .4-3.8-.7-7.5-2.7-10.8 1.5-1.3 2.9-3.3 3.8-5 1.2-2.1 1.4-4.1.5-6.4-.1-.2-.3-.2-.4-.2h-.1l-6 1.2c-2 .4-4.1 1-6.1 1.1-1.9.1-3.8-.3-5.7-.5-2-.3-3.9-.4-5.9-.5-3.9-.2-7.8 0-11.6.4-3.9.5-7.8 1.5-11.8 1-4-.5-7.6-2.6-11.6-2.6-.1-.3-.6-.3-.6.1 0 2.3.5 4.6 1.5 6.7.8 1.7 2.1 4.2 3.8 5.2-1.7 2.6-1.8 6.4-1.7 9.4.1 2.8.4 6.8 2.2 9l.1.1c-2.9 4.4-5 9.4-5.1 14.8.1 4.7 4.1 18.4 7.8 21.3z"
@@ -78,7 +96,7 @@ function Contact() {
                   className="white"
                   fill="#FCEE21"
                   stroke="#000"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   cx="263.2"
                   cy="22.4"
                   r="8.9"
@@ -87,7 +105,7 @@ function Contact() {
                   <ellipse
                     className="iris"
                     stroke="#000"
-                    stroke-miterlimit="10"
+                    strokeMiterlimit="10"
                     cx="262.9"
                     cy="21.8"
                     rx="2.9"
@@ -97,7 +115,7 @@ function Contact() {
                     className="light"
                     fill="#FCEE21"
                     stroke="#FCEE21"
-                    stroke-miterlimit="10"
+                    strokeMiterlimit="10"
                     d="M260.3 20.1l1.7.9-.6-2s-.8.2-1.1 1.1z"
                   />
                 </g>
@@ -107,7 +125,7 @@ function Contact() {
                   className="white"
                   fill="#FCEE21"
                   stroke="#000"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   cx="286.7"
                   cy="22.4"
                   r="9.1"
@@ -116,7 +134,7 @@ function Contact() {
                   <ellipse
                     className="iris"
                     stroke="#000"
-                    stroke-miterlimit="10"
+                    strokeMiterlimit="10"
                     cx="286.4"
                     cy="21.7"
                     rx="3"
@@ -126,7 +144,7 @@ function Contact() {
                     className="light"
                     fill="#FCEE21"
                     stroke="#FCEE21"
-                    stroke-miterlimit="10"
+                    strokeMiterlimit="10"
                     d="M283.7 20.1l1.7.9-.6-2s-.8.2-1.1 1.1z"
                   />
                 </g>
@@ -147,10 +165,30 @@ function Contact() {
             <g className="left_claws" fill="#FBB03B">
               <path d="M264.8 78.6c-.1-.6-.1-1.3 0-1.8.1-.8.4-1.3 1-1.6.1-.1.3-.2.5-.3.1 0 .1.1.1.1.6.5.7 1.4.6 2.2-.1 1-.5 1.9-.6 2.9-.1 1-.1 2-.1 3v.1c.1.1-.1.2-.1.1-.3-.4-.4-.7-.6-1.1-.2-.2-.3-.5-.4-.7-.1-.2-.1-.4-.1-.6-.1-.4-.2-.9-.2-1.3-.1-.4-.1-.7-.1-1zM263.1 82.5c.1.2.3.1.3-.1v-.2c.2-1.1.2-2.2.3-3.4.1-1 .5-2 .5-3 .1-.8-.3-1.9-1.3-1.6-.1 0-.1.1 0 .1-.4.2-.7 1-.7 1.3-.5 2.4.2 4.8.9 6.9zM268.1 84.5c.1.2.3.1.3-.1v-.2c.2-1.1.2-2.2.3-3.4.1-1 .5-2 .5-3 .1-.8-.3-1.9-1.3-1.6-.1 0-.1.1 0 .1-.4.2-.7 1-.7 1.3-.5 2.4.2 4.8.9 6.9z" />
             </g>
+
             <g>
-              <foreignObject x="257.2" y="25.4" width="100" height="100">
-                <img src="images/icons/mail.svg" width="40px" alt="" />
+              <foreignObject x="260.2" y="26.4" width="100" height="100">
+                <img src="images/icons/mail.svg" width="30px" alt="" />
               </foreignObject>
+            </g>
+            <g>
+              <svg
+                className="beak"
+                xmlns="http://www.w3.org/2000/svg"
+                width="5"
+                height="9"
+                x="272"
+                y="30.4"
+                viewBox="0 0 5 9"
+              >
+                <path
+                  id="Polygon_1"
+                  data-name="Polygon 1"
+                  d="M2.211,1.041a.3.3,0,0,1,.578,0L4.894,8.62A.3.3,0,0,1,4.605,9H.395a.3.3,0,0,1-.289-.38Z"
+                  transform="translate(5 9) rotate(180)"
+                  fill="#fcee21"
+                />
+              </svg>
             </g>
           </g>
         </svg>

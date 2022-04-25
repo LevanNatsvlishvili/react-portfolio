@@ -34,7 +34,7 @@ function Contact() {
     <section>
       <div className="absolute left-40 z-10">
         <FrontText
-          shouldDisplay={currView === 2}
+          shouldDisplay={currView === 4}
           heading1="Contact"
           bottom="Tech Stack"
         />
@@ -42,7 +42,7 @@ function Contact() {
           <Button>Read More</Button>
         </div>
       </div>
-      <Form onClick={handleSubmit} />
+      <Form shouldDisplay={currView === 4} onClick={handleSubmit} />
     </section>
   );
 }

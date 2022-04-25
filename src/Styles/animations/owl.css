@@ -18,7 +18,6 @@
   transform-origin: center center;
   transform-box: fill-box;
 }
-
 .owl {
   animation: wobble 8s ease-in-out infinite;
   transform-box: fill-box;
@@ -31,27 +30,26 @@
 
 .owl_iris_left,
 .owl_iris_right {
-  animation-name: eyeMovementAnimation1, eyeMovementAnimation2,
-    eyeMovementAnimation3;
-  animation-duration: 7000ms, 7000ms, 7000ms;
-  animation-delay: 0ms, 7000ms, 14000ms; /* add this */
-  animation-timing-function: ease-in, ease-out, ease;
-  animation-iteration-count: 1, 1, 1;
+  animation: eyeMovementAnimation 30s ease-in-out infinite;
 }
 
 .eyes_wrapper {
-  animation: blink 4s ease-in-out infinite;
-  animation-delay: 0.3333333333s;
+  animation: wakeUp 4s ease-in-out infinite;
+  animation-delay: 5.3333333333s;
 }
 
-.flyting-active .left_wing {
+.owl-root {
+  transform: translate(0, 0);
+}
+
+.flying-active .left_wing {
   animation: shake-left-wing 0.5s infinite;
 }
-.flyting-active .right_wing {
+.flying-active .right_wing {
   animation: shake-right-wing 0.5s infinite;
 }
-.eyeAnimation1 {
-  animation: flyAwayOwl1 7s;
+.flying-active {
+  animation: flyAwayOwl1 10s;
   transform-box: fill-box;
   transform-origin: center center;
   animation-iteration-count: 1;
@@ -60,18 +58,22 @@
 }
 .eye_right,
 .eye_left {
-  transform: rotateX(0deg);
+  transform: rotateX(90deg);
+}
+.activePage .eye_right,
+.activePage .eye_left {
+  animation: wakeUp 7s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
 }
 
 @keyframes flyAwayOwl1 {
   20% {
     transform: translate(0, -50px);
   }
-  25% {
-    transform: translate(0, -45px);
-  }
+
   100% {
-    transform: translate(0, -1000px);
+    transform: translate(1000px, -500px);
   }
 }
 
@@ -128,77 +130,64 @@
     transform: rotateX(0deg);
   }
 }
-@keyframes slightly-move-eyes {
-  0% {
-    transform: translateX(-1.2px);
-  }
-  80% {
-    transform: translateX(-1.2px);
-  }
-  100% {
-    transform: translateX(5px);
-  }
-}
-@keyframes look-around {
-  0% {
+@keyframes eyeMovementAnimation {
+  2% {
     transform: translateX(0px);
   }
-  8.3% {
+  4.3% {
     transform: translateX(-2px);
   }
-  16.63% {
+  6.63% {
     transform: translateX(5px);
   }
-  24.9% {
+  8.9% {
     transform: translateY(4px);
   }
-  33.23% {
+  11.23% {
     transform: translateX(-4px);
   }
-  50% {
+  13.90% {
     transform: translateX(0px);
   }
-}
-@keyframes eyeMovementAnimation2 {
-  8.3% {
+  24% {
+    transform: translateX(0px);
+  }
+  27.3% {
     transform: translate(-2px, 5px);
   }
-  16.63% {
+  30.93% {
     transform: translateX(5px);
   }
-  24.9% {
+  32.4% {
     transform: translate(-4px);
   }
-  50% {
+  35% {
     transform: translateX(0px);
   }
-}
-
-@keyframes eyeMovementAnimation3 {
-  8.3% {
+  66.3% {
     transform: translate(0, 5px);
   }
-  33.23% {
+  67% {
     transform: translate(0, 5px);
   }
-  60% {
+  68.4% {
     transform: translate(0, 5px);
   }
-  70% {
+  73.1% {
     transform: translate(0, -2px);
   }
-  90% {
+  76.7% {
     transform: translate(0, -2px);
   }
-  94% {
+  78.5% {
     transform: translate(0, 0);
   }
 }
 @keyframes wobble {
   33% {
-    transform: rotate(5deg);
+    transform: rotate(3deg);
   }
   66% {
-    transform: rotate(-5deg);
+    transform: rotate(-3deg);
   }
 }
