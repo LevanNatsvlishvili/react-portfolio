@@ -1,7 +1,6 @@
 .signup-form {
   transition: 0.2s;
-  box-shadow: 2px 2px 13px -1px #2c3d7a;
-  background: rgb(13 22 40 / 60%);
+
   color: #fff;
 }
 .signup-form input,

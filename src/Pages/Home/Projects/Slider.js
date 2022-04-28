@@ -1,5 +1,5 @@
 import Image from 'Components/Image';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const images = [
   { id: 0, img: 'images/projects/clothingstore.png' },

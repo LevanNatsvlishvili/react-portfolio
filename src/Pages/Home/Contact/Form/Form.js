@@ -71,7 +71,7 @@ function Contact(props) {
 
       <div
         ref={formRef}
-        className="signup-form right-36 w-1/3 py-8 px-8 rounded-lg z-20 absolute flex-col flex justify-center"
+        className="signup-form styled-card right-36 w-1/3 z-20 absolute flex-col flex justify-center"
       >
         <svg
           className="owl-root absolute left-0 -z-10"

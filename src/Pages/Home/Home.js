@@ -5,7 +5,7 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Welcome from './Welcome';
 
-function Pages() {
+function Home() {
   return (
     <div className="relative z-index-1">
       <Welcome />
@@ -17,4 +17,4 @@ function Pages() {
   );
 }
 
-export default Pages;
+export default Home;

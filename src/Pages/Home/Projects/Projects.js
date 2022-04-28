@@ -1,34 +1,27 @@
 import FrontText from 'Components/Animations/FrontText';
 import Button from 'Components/Button';
-import React, { useState } from 'react';
+import React from 'react';
 import useStore from 'Store/Context';
-import Form from './Form';
+import Slider from './Slider';
 
-class CleanForm {
-  constructor() {
-    this.mail = '';
-    this.message = '';
-  }
-}
-
-function Contact() {
+function About() {
   const { currView } = useStore();
 
   return (
     <section>
       <div className="absolute left-40 z-10">
         <FrontText
-          shouldDisplay={currView === 4}
-          heading1="Contact"
-          bottom="L.nats51@yahoo.com"
+          shouldDisplay={currView === 2}
+          heading1="Projects"
+          bottom="Portfolio"
         />
         <div>
           <Button>Read More</Button>
         </div>
       </div>
-      <Form shouldDisplay={currView === 4} />
+      <Slider shouldDisplay={currView === 2} />
     </section>
   );
 }
 
-export default Contact;
+export default About;

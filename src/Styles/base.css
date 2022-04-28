@@ -68,6 +68,9 @@ body {
 .star-3::after {
   transform: rotate(90deg);
 }
+.star-4::after {
+  transform: rotate(120deg);
+}
 
 /* nav menu styles */
 .navbutton {
@@ -185,4 +188,37 @@ body {
 .slider-auto {
   animation: translateinfinite 10s linear infinite;
   animation: translateinfinite 10s linear infinite;
+}
+
+.styled-card {
+  box-shadow: 2px 2px 13px -1px #2c3d7a;
+  background: rgb(13 22 40 / 60%);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: #91b3bc;
+}
+
+.about-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.about-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #181d5e;
+  opacity: 0.15;
+}
+.about-image-container img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 40% -15px;
 }

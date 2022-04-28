@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { paths } from 'Routing/Paths';
 
 function HeaderContactLinks(props) {
   const { navMenu, setNavMenu } = props;
@@ -11,7 +13,9 @@ function HeaderContactLinks(props) {
   return (
     <div className="flex items-center w-full fixed w-full px-10 pt-10 z-50">
       <div>
-        <h5>Levan Natsvlishvili</h5>
+        <h5>
+          <Link to={paths.home}>Levan Natsvlishvili</Link>
+        </h5>
       </div>
       <div className="ml-auto">
         <div className="flex items-center">

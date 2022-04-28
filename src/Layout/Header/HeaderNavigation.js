@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { paths } from 'Routing/Paths';
 
 function HeaderNavigation(props) {
   const { navMenu } = props;
@@ -15,13 +17,16 @@ function HeaderNavigation(props) {
     >
       <ul>
         <li className="my-10">
-          <a href="#">About Me</a>
+          <Link to={paths.home}>Home</Link>
         </li>
         <li className="my-10">
-          <a href="#">Projects</a>
+          <Link to={paths.about}>About Me</Link>
         </li>
         <li className="my-10">
-          <a href="#">Skill Set</a>
+          <Link to={paths.projects}>Projects</Link>
+        </li>
+        <li className="my-10">
+          <Link to={paths.skills}>Skill Set</Link>
         </li>
       </ul>
     </nav>

@@ -2,15 +2,41 @@ import React from 'react';
 import Scroll from './Scroll';
 import Header from './Header';
 import useStore from 'Store/Context';
+import { useLocation } from 'react-router-dom';
+
+function useQuery() {
+  const location = useLocation();
+  if (location.pathname.length <= 1) {
+    return true;
+  }
+  return false;
+}
 
 const Layout = ({ children }) => {
   const { currView, setCurrView } = useStore();
+
+  const shouldScrollDisplay = useQuery();
+
+  console.log(shouldScrollDisplay);
+
   return (
     <div className={`star-container star-${currView}`}>
-      <Header currView={currView} setCurrView={setCurrView} />
-      <Scroll currView={currView} setCurrView={setCurrView}>
-        <main>{children}</main>
-      </Scroll>
+      <Header
+        shouldScrollDisplay={shouldScrollDisplay || false}
+        currView={currView}
+        setCurrView={setCurrView}
+      />
+      {shouldScrollDisplay && (
+        <Scroll
+          shouldScrollDisplay={shouldScrollDisplay || false}
+          currView={currView}
+          setCurrView={setCurrView}
+        >
+          <main>{children}</main>
+        </Scroll>
+      )}
+
+      {!shouldScrollDisplay && <main>{children}</main>}
     </div>
   );
 };

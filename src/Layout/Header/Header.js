@@ -4,7 +4,7 @@ import HeaderNavigation from './HeaderNavigation';
 import HeaderScrollNav from './HeaderScrollNav';
 
 function Head(props) {
-  const { currView, setCurrView } = props;
+  const { currView, setCurrView, shouldScrollDisplay } = props;
   const [navMenu, setNavMenu] = useState(false);
 
   return (
@@ -13,7 +13,9 @@ function Head(props) {
 
       <HeaderNavigation navMenu={navMenu} />
 
-      <HeaderScrollNav currView={currView} setCurrView={setCurrView} />
+      {shouldScrollDisplay && (
+        <HeaderScrollNav currView={currView} setCurrView={setCurrView} />
+      )}
     </header>
   );
 }

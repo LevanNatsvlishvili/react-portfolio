@@ -1,14 +1,17 @@
 import './Styles/global.css';
 import Layout from 'Layout';
-import Pages from 'Pages';
 import { StoreContextProvider } from 'Store/Context';
+import RenderRoutes from 'Routing/Routing';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <StoreContextProvider>
-      <Layout>
-        <Pages />
-      </Layout>
+      <Router>
+        <Layout>
+          <RenderRoutes />
+        </Layout>
+      </Router>
     </StoreContextProvider>
   );
 }

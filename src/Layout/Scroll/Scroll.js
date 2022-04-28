@@ -1,40 +1,40 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const debounce = (func, wait) => {
-  let timeout;
-  return (...args) => {
-    const later = () => {
-      timeout = null;
+// const debounce = (func, wait) => {
+//   let timeout;
+//   return (...args) => {
+//     const later = () => {
+//       timeout = null;
 
-      func(...args);
-    };
-    clearTimeout(timeout);
+//       func(...args);
+//     };
+//     clearTimeout(timeout);
 
-    timeout = setTimeout(later, wait);
-  };
-};
+//     timeout = setTimeout(later, wait);
+//   };
+// };
 
-let throttlePause;
+// let throttlePause;
 
-const throttle = (callback, time) => {
-  //don't run the function if throttlePause is true
-  if (throttlePause) return;
-  console.log(throttlePause);
+// const throttle = (callback, time) => {
+//   //don't run the function if throttlePause is true
+//   if (throttlePause) return;
+//   console.log(throttlePause);
 
-  //set throttlePause to true after the if condition. This allows the function to be run once
-  throttlePause = true;
+//   //set throttlePause to true after the if condition. This allows the function to be run once
+//   throttlePause = true;
 
-  //setTimeout runs the callback within the specified time
-  setTimeout(() => {
-    callback();
+//   //setTimeout runs the callback within the specified time
+//   setTimeout(() => {
+//     callback();
 
-    //throttlePause is set to false once the function has been called, allowing the throttle function to loop
-    throttlePause = false;
-  }, time);
-};
+//     //throttlePause is set to false once the function has been called, allowing the throttle function to loop
+//     throttlePause = false;
+//   }, time);
+// };
 
 function SectionScrolling(props) {
-  const { children, currView, setCurrView } = props;
+  const { children, currView, setCurrView, shouldScrollDisplay } = props;
   const [loading, setLoading] = useState(false);
 
   const [direction, setDirection] = useState('');
@@ -65,6 +65,7 @@ function SectionScrolling(props) {
   ];
 
   const MouseWheelHandler = (e) => {
+    if (!shouldScrollDisplay) return;
     if (loading) return;
     var event = window.event || e;
     var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
@@ -110,8 +111,8 @@ function SectionScrolling(props) {
       setLoading(true);
     }
   };
-
-  if (!loading) {
+  console.log(shouldScrollDisplay);
+  if (loading === false) {
     document.body.addEventListener('mousewheel', handleThrottle, false);
     document.body.addEventListener('keydown', handleKeyDown, false);
     document.body.addEventListener('DOMMouseScroll', handleThrottle, false);
