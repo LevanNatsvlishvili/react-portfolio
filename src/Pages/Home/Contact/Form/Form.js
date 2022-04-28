@@ -202,7 +202,7 @@ function Contact(props) {
         />
         <textarea
           type="textarea"
-          className=" bg-[#141414] my-2 h-28 rounded-3xl w-full py-4 text-sm px-4 outline-none w-full"
+          className="scroll-bar bg-[#141414] my-2 h-28 rounded-3xl w-full py-4 text-sm px-4 outline-none w-full"
           placeholder="Message"
           required
           value={form.message}
