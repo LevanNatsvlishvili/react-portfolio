@@ -14,7 +14,6 @@ function SectionScrolling(props) {
     { name: 'contact', axis: 'translateY(-400vh)' },
   ];
 
-  console.log(shouldScrollDisplay);
   // if (loading === false) {
   //   document.body.addEventListener('mousewheel', handleThrottle, false);
   //   document.body.addEventListener('keydown', handleKeyDown, false);
@@ -34,8 +33,12 @@ function SectionScrolling(props) {
       if (loading) return;
       var event = window.event || e;
       var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
+      console.log(delta);
+
       if (delta > 0) {
+        console.log(currView);
         if (currView === 0) return;
+
         setDirection('up');
         setLoading(true);
       }
@@ -75,39 +78,41 @@ function SectionScrolling(props) {
       }
     };
 
-    document.body.addEventListener('mousewheel', handleThrottle, false);
+    document.body.addEventListener('mousewheel', MouseWheelHandler, false);
     document.body.addEventListener('keydown', handleKeyDown, false);
-    document.body.addEventListener('DOMMouseScroll', handleThrottle, false);
+    document.body.addEventListener('DOMMouseScroll', MouseWheelHandler, false);
 
     return () => {
-      document.body.removeEventListener('mousewheel', handleThrottle, false);
+      document.body.removeEventListener('mousewheel', MouseWheelHandler, false);
       document.body.removeEventListener('keydown', handleKeyDown, false);
       document.body.removeEventListener(
         'DOMMouseScroll',
-        handleThrottle,
+        MouseWheelHandler,
         false
       );
     };
-  }, []);
+  }, [currView, direction]);
+
+  function scrollDown() {
+    if (currView === pages.length - 1) return;
+    setCurrView(currView + 1);
+    const axis = `translateY(-${currView + 1}00vh)`;
+    document.getElementById('wrapper').style.transform = axis;
+  }
+
+  function scrollUp() {
+    if (currView === 0) return;
+    // console.log('scrolled');
+
+    setCurrView(currView - 1);
+    const axis = `translateY(-${currView - 1}00vh)`;
+    document.getElementById('wrapper').style.transform = axis;
+  }
 
   useEffect(() => {
-    function scrollDown() {
-      if (currView === pages.length - 1) return;
-      setCurrView(currView + 1);
-      const axis = `translateY(-${currView + 1}00vh)`;
-      document.getElementById('wrapper').style.transform = axis;
-    }
-
-    function scrollUp(page) {
-      if (currView === 0) return;
-      // console.log('scrolled');
-
-      setCurrView(currView - 1);
-      const axis = `translateY(-${currView - 1}00vh)`;
-      document.getElementById('wrapper').style.transform = axis;
-    }
-
+    console.log(currView);
     if (loading) return;
+    console.log(direction);
     if (direction === 'down') scrollDown();
     if (direction === 'up') scrollUp();
     // eslint-disable-next-line react-hooks/exhaustive-deps

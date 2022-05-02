@@ -52,9 +52,11 @@ const TimelineDot = ({ position, onClick }) => (
     style={{ left: `${position}%` }}
     className="absolute -top-9 flex flex-col items-center cursor-pointer"
   >
-    <h1 className="text-grey-text text-xl mb-1">Leavingstone</h1>
+    <h1 className="text-white text-xl mb-1">Leavingstone</h1>
     <div className="w-4 h-4 bg-grey-text rounded-1/2 mt-0.5" />
-    <p className="text-grey-text text-base mt-2">[2021 - Present]</p>
+    <p className="text-grey-text text-base mt-2 firago-light">
+      [2021 - Present]
+    </p>
   </div>
 );
 

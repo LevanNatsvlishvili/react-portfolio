@@ -13,8 +13,6 @@ function Contact(props) {
   const [viewBox, setViewBox] = useState('0 0 0 0');
   const formRef = useRef();
 
-  console.log(formRef.current?.offsetWidth);
-
   useEffect(() => {
     setViewBox(
       `0 0 ${formRef.current?.offsetWidth} ${

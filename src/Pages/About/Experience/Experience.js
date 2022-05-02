@@ -42,10 +42,9 @@ const companies = [
 ];
 
 const Experience = () => {
-  const [curr, setCurr] = useState(2);
+  const [curr, setCurr] = useState(0);
 
   const handleCompany = (newCurr) => {
-    console.log('clicked');
     setCurr(newCurr);
   };
 
@@ -55,7 +54,7 @@ const Experience = () => {
       <div className="overflow-hidden h-48 pl-2 mt-8 ">
         <div
           style={{ transform: `translateY(-${curr * 12}rem)` }}
-          className="px-2 -ml-2 transition"
+          className="px-2 -ml-2 transition duration-500"
         >
           {companies.map((company, i) => (
             <ExperienceDetails company={company} key={i} />

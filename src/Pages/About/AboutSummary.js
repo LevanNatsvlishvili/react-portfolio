@@ -10,9 +10,13 @@ const Summary = () => {
           alt=""
         />
       </div>
-      <h5 className="pt-8 text-grey-text text-3xl">Levan Natsvlishvili</h5>
-      <h1 className="pt-1 pb-6 text-grey-text text-xl">Front-end Developer</h1>
-      <p className=" text-grey-text text-center text-base scroll-bar">
+      <h5 className="pt-8 text-grey-text text-3xl text-white">
+        Levan Natsvlishvili
+      </h5>
+      <h1 className="pt-1 pb-6 text-grey-text text-xl text-orange">
+        Front-end Developer
+      </h1>
+      <p className="text-grey-text text-center text-base scroll-bar firago-light">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

@@ -14,10 +14,7 @@ function useQuery() {
 
 const Layout = ({ children }) => {
   const { currView, setCurrView } = useStore();
-
   const shouldScrollDisplay = useQuery();
-
-  console.log(shouldScrollDisplay);
 
   return (
     <div className={`star-container star-${currView}`}>
