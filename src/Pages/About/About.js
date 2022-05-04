@@ -1,6 +1,7 @@
 import React from 'react';
 import AboutSummary from './AboutSummary';
 import AboutTimeline from './AboutTimeline';
+import Tabs from './Tabs';
 
 const About = () => {
   return (
@@ -10,6 +11,8 @@ const About = () => {
       </div>
       <div className="col-span-8 ">
         <AboutTimeline />
+
+        <Tabs />
       </div>
     </div>
   );

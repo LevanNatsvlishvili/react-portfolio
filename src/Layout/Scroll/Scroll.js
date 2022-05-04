@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import throttle from 'lodash/throttle';
 
 function SectionScrolling(props) {
   const { children, currView, setCurrView, shouldScrollDisplay } = props;
@@ -14,12 +15,6 @@ function SectionScrolling(props) {
     { name: 'contact', axis: 'translateY(-400vh)' },
   ];
 
-  // if (loading === false) {
-  //   document.body.addEventListener('mousewheel', handleThrottle, false);
-  //   document.body.addEventListener('keydown', handleKeyDown, false);
-  //   document.body.addEventListener('DOMMouseScroll', handleThrottle, false);
-  // }
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -27,73 +22,57 @@ function SectionScrolling(props) {
     }, 800);
   }, [loading]);
 
-  useEffect(() => {
-    const MouseWheelHandler = (e) => {
-      if (!shouldScrollDisplay) return;
-      if (loading) return;
-      var event = window.event || e;
-      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
-      console.log(delta);
+  const MouseWheelHandler = (e) => {
+    if (!shouldScrollDisplay) return;
+    if (loading) return;
+    var event = window.event || e;
+    var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
 
-      if (delta > 0) {
-        console.log(currView);
-        if (currView === 0) return;
-
-        setDirection('up');
-        setLoading(true);
-      }
-      if (delta < 0) {
-        if (currView === pages - 1) return;
-        setDirection('down');
-        setLoading(true);
-      }
-    };
-
-    function throttler(callback, delay = 1000) {
-      let shouldWait = false;
-
-      return (...args) => {
-        if (shouldWait === true) return;
-
-        callback(...args);
-        shouldWait = true;
-
-        setTimeout(() => {
-          shouldWait = false;
-        }, delay);
-      };
+    if (delta > 0) {
+      setDirection('up');
+      setLoading(true);
     }
-    const handleThrottle = throttler((e) => MouseWheelHandler(e));
+    if (delta < 0) {
+      setDirection('down');
+      setLoading(true);
+    }
+  };
 
-    const handleKeyDown = (e) => {
-      if (e.key === 'ArrowUp') {
-        if (currView === 0) return;
-        setDirection('up');
-        setLoading(true);
-      }
-      if (e.key === 'ArrowDown') {
-        if (currView === pages - 1) return;
-        setDirection('down');
-        setLoading(true);
-      }
-    };
+  const handleThrottle = useCallback(
+    throttle((e) => MouseWheelHandler(e, currView), 1000),
+    []
+  );
 
-    document.body.addEventListener('mousewheel', MouseWheelHandler, false);
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowUp') {
+      if (currView === 0) return;
+      setDirection('up');
+      setLoading(true);
+    }
+    if (e.key === 'ArrowDown') {
+      if (currView === pages - 1) return;
+      setDirection('down');
+      setLoading(true);
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener('mousewheel', handleThrottle, false);
     document.body.addEventListener('keydown', handleKeyDown, false);
-    document.body.addEventListener('DOMMouseScroll', MouseWheelHandler, false);
+    document.body.addEventListener('DOMMouseScroll', handleThrottle, false);
 
     return () => {
-      document.body.removeEventListener('mousewheel', MouseWheelHandler, false);
+      document.body.removeEventListener('mousewheel', handleThrottle, false);
       document.body.removeEventListener('keydown', handleKeyDown, false);
       document.body.removeEventListener(
         'DOMMouseScroll',
-        MouseWheelHandler,
+        handleThrottle,
         false
       );
     };
-  }, [currView, direction]);
+  }, [currView]);
 
   function scrollDown() {
+    console.log(currView);
     if (currView === pages.length - 1) return;
     setCurrView(currView + 1);
     const axis = `translateY(-${currView + 1}00vh)`;

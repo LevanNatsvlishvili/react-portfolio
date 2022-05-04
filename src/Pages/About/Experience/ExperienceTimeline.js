@@ -3,18 +3,23 @@ import React, { useEffect, useState } from 'react';
 const staticPositions = {
   1: [45],
   2: [0, 85],
-  3: [0, 45, 85],
+  3: [0, 40, 85],
   4: [0, 30, 60, 85],
 };
 
 const Timeline = (props) => {
-  const { companies, handleCompany } = props;
+  const { companies, handleCompany, curr } = props;
   const [positions, setPositions] = useState([]);
   console.log(companies.length);
 
   const calculateDotPositions = () => {
     if (companies.length <= 4) {
-      return staticPositions[companies.length];
+      const chosenPositions = staticPositions[companies.length];
+      const newArr = companies.map((company, index) => ({
+        ...company,
+        position: chosenPositions[index],
+      }));
+      return newArr;
     }
 
     const sectionPercentage = 100 / companies.length;
@@ -37,8 +42,10 @@ const Timeline = (props) => {
         {positions.length &&
           positions.map((position, index) => (
             <TimelineDot
-              position={position}
+              company={position}
+              isLast={positions.length - 1 === index}
               onClick={() => handleCompany(index)}
+              active={curr === index}
             />
           ))}
       </div>
@@ -46,14 +53,18 @@ const Timeline = (props) => {
   );
 };
 
-const TimelineDot = ({ position, onClick }) => (
+const TimelineDot = ({ company, isLast, active, onClick }) => (
   <div
     onClick={onClick}
-    style={{ left: `${position}%` }}
+    style={isLast ? { right: 0 } : { left: `${company.position}%` }}
     className="absolute -top-9 flex flex-col items-center cursor-pointer"
   >
-    <h1 className="text-white text-xl mb-1">Leavingstone</h1>
-    <div className="w-4 h-4 bg-grey-text rounded-1/2 mt-0.5" />
+    <h1 className="text-white text-xl mb-1">{company.timelineTitle}</h1>
+    <div
+      className={`w-4 h-4 ${
+        active ? 'bg-orange' : 'bg-grey-text'
+      } rounded-1/2 mt-0.5 `}
+    />
     <p className="text-grey-text text-base mt-2 firago-light">
       [2021 - Present]
     </p>

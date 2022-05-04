@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import ExperienceDetails from './ExperienceDetails';
-import Timeline from './ExperienceTimeline';
+import ExperienceDetails from './TabsDetails';
+import Switch from './TabsSwitch';
 
 const companies = [
   {
     id: 0,
     title: 'Leavingstone',
-    timelineTitle: 'Leavingstone',
     role: 'Front-end Developer',
     date: '2021 October - present',
     timelineDate: '2021 - Present',
@@ -23,7 +22,6 @@ const companies = [
   {
     id: 1,
     title: 'Helix Nebula Capital',
-    timelineTitle: 'Helix Nebula Capital',
     role: 'Front-end Developer',
     date: '2020 October - 2021 July',
     timelineDate: '2020 - 2021',
@@ -34,7 +32,6 @@ const companies = [
   {
     id: 2,
     title: 'Georgian State Electrosystem',
-    timelineTitle: 'GSE',
     role: 'Full Stack Web Developer',
     date: '2020 October - 2021 July',
     timelineDate: '2020 - 2021',
@@ -44,23 +41,20 @@ const companies = [
   },
 ];
 
-const Experience = () => {
-  const [curr, setCurr] = useState(0);
+const Tabs = () => {
+  const [currTab, setCurrTab] = useState(0);
 
-  const handleCompany = (newCurr) => {
-    setCurr(newCurr);
+  const handleTab = (newCurr) => {
+    console.log(newCurr);
+    setCurrTab(newCurr);
   };
 
   return (
     <div>
-      <Timeline
-        handleCompany={handleCompany}
-        companies={companies}
-        curr={curr}
-      />
-      <div className="overflow-hidden h-48 pl-2 mt-8 ">
+      <Switch handleTab={handleTab} currTab={currTab} />
+      <div className="overflow-hidden h-48 pl-2 mt-2 ">
         <div
-          style={{ transform: `translateY(-${curr * 12}rem)` }}
+          style={{ transform: `translateY(-${currTab * 12}rem)` }}
           className="px-2 -ml-2 transition duration-500"
         >
           {companies.map((company, i) => (
@@ -72,4 +66,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Tabs;

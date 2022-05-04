@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExperienceDetails = (props) => {
+const TabsDetails = (props) => {
   const { title, role, techStack, date, description } = props.company;
 
   return (
@@ -31,4 +31,4 @@ const ExperienceDetails = (props) => {
   );
 };
 
-export default ExperienceDetails;
+export default TabsDetails;

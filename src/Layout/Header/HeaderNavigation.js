@@ -9,7 +9,7 @@ function HeaderNavigation(props) {
   return (
     <nav
       className={clsx(
-        'navmenu ease-linear flex justify-center items-center text-8xl text-center absolute -z-10',
+        'navmenu ease-linear flex justify-center items-center text-8xl text-center absolute z-20',
         {
           '-translate-y-full': !navMenu,
         }
