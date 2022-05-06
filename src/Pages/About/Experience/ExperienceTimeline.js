@@ -42,6 +42,7 @@ const Timeline = (props) => {
         {positions.length &&
           positions.map((position, index) => (
             <TimelineDot
+              key={index}
               company={position}
               isLast={positions.length - 1 === index}
               onClick={() => handleCompany(index)}

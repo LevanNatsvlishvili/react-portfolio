@@ -45,16 +45,15 @@ const Tabs = () => {
   const [currTab, setCurrTab] = useState(0);
 
   const handleTab = (newCurr) => {
-    console.log(newCurr);
     setCurrTab(newCurr);
   };
 
   return (
     <div>
       <Switch handleTab={handleTab} currTab={currTab} />
-      <div className="overflow-hidden h-48 pl-2 mt-2 ">
+      <div className="overflow-hidden h-72 pl-2 mt-2 ">
         <div
-          style={{ transform: `translateY(-${currTab * 12}rem)` }}
+          style={{ transform: `translateY(-${currTab * 19}rem)` }}
           className="px-2 -ml-2 transition duration-500"
         >
           {companies.map((company, i) => (

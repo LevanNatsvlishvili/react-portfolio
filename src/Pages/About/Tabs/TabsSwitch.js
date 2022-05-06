@@ -77,7 +77,7 @@ const Switch = (props) => {
 
   return (
     <div className="w-full h-20 flex items-center">
-      <div className="w-full h-12 styled-card flex items-center p-0 rounded-full transition">
+      <div className="w-full h-10 styled-card flex items-center p-0 rounded-full transition">
         {tabs.map((tab, i) => generateButton(tab, i))}
       </div>
     </div>

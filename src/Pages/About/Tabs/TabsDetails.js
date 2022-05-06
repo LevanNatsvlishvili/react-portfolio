@@ -1,30 +1,76 @@
 import React from 'react';
+import Skill from '../Components/Skill';
+
+const skills = [
+  {
+    logo: 'images/skills/javascript.svg',
+    skill: 'Javascript',
+    level: 'Advanced',
+    time: '3 Years',
+  },
+  {
+    logo: 'images/skills/react.svg',
+    skill: 'React',
+    level: 'Advanced',
+    time: '2 Years',
+  },
+  {
+    logo: 'images/skills/html.svg',
+    skill: 'HTML',
+    level: 'Advanced',
+    time: '3 Years',
+  },
+  {
+    logo: 'images/skills/css.svg',
+    skill: 'CSS',
+    level: 'Advanced',
+    time: '3 Years',
+  },
+  {
+    logo: 'images/skills/material-ui.svg',
+    skill: 'Material-UI',
+    level: 'Advanced',
+    time: '2 Years',
+  },
+  {
+    logo: 'images/skills/tailwind.svg',
+    skill: 'Tailwind-CSS',
+    level: 'Intermediate',
+    time: '< 1 Years',
+  },
+  {
+    logo: 'images/skills/typescript.svg',
+    skill: 'Typescript',
+    level: 'Intermediate',
+    time: '1 Year',
+  },
+  {
+    logo: 'images/skills/next.svg',
+    skill: 'Next',
+    level: 'Basics',
+    time: '< 1 Years',
+  },
+];
 
 const TabsDetails = (props) => {
-  const { title, role, techStack, date, description } = props.company;
+  const { title, role, date } = props.company;
 
   return (
-    <div className={` grid-cols-12 grid gap-5 mb-8 my-3`}>
-      <div className="col-span-4 styled-card text-grey-text p-4  ">
-        <div className="scroll-bar overflow-y-auto overflow-x-hidden h-32">
-          <h1 className="text-2xl text-grey-text text-white">{title}</h1>
-          <h2 className="text-base text-grey-text text-orange">{role}</h2>
-          <p className="text-grey-text text-base firago-light">[{date}]</p>
-        </div>
-      </div>
-      <div className="col-span-3 styled-card p-4 ">
-        <div className="scroll-bar overflow-y-auto overflow-x-hidden h-32">
-          <h6 className="text-base text-grey-text">Tech Stack:</h6>
-          <ul className="text-sm text-grey-text list-disc pl-5 pt-1 ">
-            {techStack?.map((tech) => (
-              <li className="text-sm text-grey-text firago-light">{tech}</li>
+    <div className="grid-cols-12  mb-8 my-3">
+      <div className="styled-card text-grey-text p-4 ">
+        <div className="scroll-bar overflow-y-auto overflow-x-hidden h-60 p-2 ">
+          <div className="w-full grid grid-cols-12 gap-x-10 gap-y-8">
+            {skills.map((skill) => (
+              <div className="col-span-4">
+                <Skill
+                  logo={skill.logo}
+                  skill={skill.skill}
+                  level={skill.level}
+                  time={skill.time}
+                />
+              </div>
             ))}
-          </ul>
-        </div>
-      </div>
-      <div className="col-span-5 styled-card p-4">
-        <div className="text-grey-text text-sm scroll-bar overflow-y-auto overflow-x-hidden h-32 firago-light">
-          {description}
+          </div>
         </div>
       </div>
     </div>

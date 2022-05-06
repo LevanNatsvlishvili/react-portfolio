@@ -16,8 +16,10 @@ const ExperienceDetails = (props) => {
         <div className="scroll-bar overflow-y-auto overflow-x-hidden h-32">
           <h6 className="text-base text-grey-text">Tech Stack:</h6>
           <ul className="text-sm text-grey-text list-disc pl-5 pt-1 ">
-            {techStack?.map((tech) => (
-              <li className="text-sm text-grey-text firago-light">{tech}</li>
+            {techStack?.map((tech, i) => (
+              <li key={i} className="text-sm text-grey-text firago-light">
+                {tech}
+              </li>
             ))}
           </ul>
         </div>
