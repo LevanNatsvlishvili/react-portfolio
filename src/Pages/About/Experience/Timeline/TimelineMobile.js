@@ -7,7 +7,7 @@ const staticPositions = {
   4: [0, 30, 60, 85],
 };
 
-const Timeline = (props) => {
+const TimelineMobile = (props) => {
   const { companies, handleCompany, curr } = props;
   const [positions, setPositions] = useState([]);
 
@@ -37,18 +37,21 @@ const Timeline = (props) => {
   }, []);
 
   return (
-    <div className="w-full h-20 flex items-center">
-      <div className="w-full h-2.5 rounded-3xl bg-[#2C3D7A] relative">
-        {positions.length &&
-          positions.map((position, index) => (
-            <TimelineDot
-              key={index}
-              company={position}
-              isLast={positions.length - 1 === index}
-              onClick={() => handleCompany(index)}
-              active={curr === index}
-            />
-          ))}
+    <div className="w-full  flex items-center">
+      <div
+        style={{ height: positions.length * 5 + 'rem' }}
+        className={`ml-4 w-full  relative`}
+      >
+        <div className="w-2.5 h-full rounded-3xl bg-[#2C3D7A]" />
+        {positions?.map((position, index) => (
+          <TimelineDot
+            key={index}
+            company={position}
+            isLast={positions.length - 1 === index}
+            onClick={() => handleCompany(index)}
+            active={curr === index}
+          />
+        ))}
       </div>
     </div>
   );
@@ -57,21 +60,21 @@ const Timeline = (props) => {
 const TimelineDot = ({ company, isLast, active, onClick }) => (
   <div
     onClick={onClick}
-    style={isLast ? { right: 0 } : { left: `${company.position}%` }}
-    className="absolute -top-9 flex flex-col items-center cursor-pointer"
+    style={isLast ? { bottom: 0 } : { top: `${company.position}%` }}
+    className="absolute left-9 flex flex-col  cursor-pointer"
   >
-    <h1 className="text-white text-base sm:text-xl mb-1">
+    <h1 className="text-white text-base sm:text-xl ">
       {company.timelineTitle}
     </h1>
     <div
       className={`w-4 h-4 ${
         active ? 'bg-orange' : 'bg-grey-text'
-      } rounded-1/2 mt-1 sm:mt-0.5 `}
+      } rounded-1/2 -ml-10 mt-6 absolute `}
     />
-    <p className="text-grey-text text-sm sm:text-base mt-2 firago-light">
-      [2021 - Present]
+    <p className="text-grey-text text-sm sm:text-base  firago-light">
+      [{company.timelineDate}]
     </p>
   </div>
 );
 
-export default Timeline;
+export default TimelineMobile;

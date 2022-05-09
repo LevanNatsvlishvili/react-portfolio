@@ -20,7 +20,7 @@ const About = () => {
             <Button
               component={Link}
               to={paths.projects}
-              className="mt-5 w-full"
+              className="mt-5 w-full text-base sm:text-2xl"
             >
               Continue To Projects
             </Button>

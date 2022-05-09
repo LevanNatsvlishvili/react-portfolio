@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ExperienceDetails from './ExperienceDetails';
-import Timeline from './ExperienceTimeline';
+import Timeline from './Timeline';
 
 const companies = [
   {
@@ -37,7 +37,7 @@ const companies = [
     timelineTitle: 'GSE',
     role: 'Full Stack Web Developer',
     date: '2020 October - 2021 July',
-    timelineDate: '2020 - 2021',
+    timelineDate: '2019 - 2020',
     techStack: ['PHP', 'MYSQL', 'Bootstrap'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -53,7 +53,6 @@ const Experience = () => {
   };
 
   useEffect(() => {
-    console.log(ref.current.offsetHeight);
     setScrollHeight(ref.current.offsetHeight > 300 ? 23 : 12);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current]);
