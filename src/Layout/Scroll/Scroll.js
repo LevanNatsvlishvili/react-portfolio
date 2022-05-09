@@ -38,6 +38,7 @@ function SectionScrolling(props) {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleThrottle = useCallback(
     throttle((e) => MouseWheelHandler(e, currView), 1000),
     []
@@ -69,6 +70,8 @@ function SectionScrolling(props) {
         false
       );
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
 
   function scrollDown() {

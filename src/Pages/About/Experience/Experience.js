@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ExperienceDetails from './ExperienceDetails';
 import Timeline from './ExperienceTimeline';
 
@@ -46,10 +46,17 @@ const companies = [
 
 const Experience = () => {
   const [curr, setCurr] = useState(0);
-
+  const [scrollHeight, setScrollHeight] = useState(12);
+  const ref = useRef();
   const handleCompany = (newCurr) => {
     setCurr(newCurr);
   };
+
+  useEffect(() => {
+    console.log(ref.current.offsetHeight);
+    setScrollHeight(ref.current.offsetHeight > 300 ? 23 : 12);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref.current]);
 
   return (
     <div>
@@ -58,9 +65,9 @@ const Experience = () => {
         companies={companies}
         curr={curr}
       />
-      <div className="overflow-hidden h-48 pl-2 mt-8 ">
+      <div ref={ref} className="overflow-hidden h-96 sm:h-48 pl-2 mt-8 ">
         <div
-          style={{ transform: `translateY(-${curr * 12}rem)` }}
+          style={{ transform: `translateY(-${curr * scrollHeight}rem)` }}
           className="px-2 -ml-2 transition duration-500"
         >
           {companies.map((company, i) => (

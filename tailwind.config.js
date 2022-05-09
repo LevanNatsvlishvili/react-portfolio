@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         'deep-blue': '#072142',
         'grey-text': '#91B3BC',
+        'blue-glow': '#2C3D7A',
         orange: '#F28C28',
       },
       spacing: {

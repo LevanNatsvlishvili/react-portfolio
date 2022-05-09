@@ -1,6 +1,7 @@
 import FrontText from 'Components/Animations/FrontText';
 import Button from 'Components/Button';
 import React from 'react';
+import { paths } from 'Routing/Paths';
 import useStore from 'Store/Context';
 
 function About() {
@@ -15,7 +16,7 @@ function About() {
           bottom="Experience, Contracts and more..."
         />
         <div>
-          <Button>Read More</Button>
+          <Button to={paths.about}>Read More</Button>
         </div>
       </div>
       <div

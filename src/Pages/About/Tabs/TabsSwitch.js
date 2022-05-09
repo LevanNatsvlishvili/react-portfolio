@@ -1,8 +1,7 @@
 import clsx from 'clsx';
-import { divide } from 'lodash';
 import React, { useEffect, useState } from 'react';
 
-const tabs = ['Skills', 'Education', 'Lang'];
+const tabs = ['Skills', 'Education', 'Languages'];
 
 const Switch = (props) => {
   const { currTab, handleTab } = props;

@@ -7,14 +7,17 @@
   transition: 0.5s;
   letter-spacing: 4px;
   overflow: hidden;
-  filter: hue-rotate(110deg);
+  color: #f28c28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
 }
 .neon-button:hover {
-  background: #03e9f4;
-  color: #050801;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 200px #03e9f4;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  background: #f28c28;
+  color: #072142;
+  box-shadow: 0 0 5px #f28c28, 0 0 25px #f28c28, 0 0 50px #f28c28,
+    0 0 200px #f28c28;
 }
 
 .neon-button span {
@@ -26,7 +29,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, #f28c28);
   animation: animate1 1s linear infinite;
 }
 @keyframes animate1 {
@@ -43,7 +46,7 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, #f28c28);
   animation: animate2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -61,7 +64,7 @@
   right: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, #f28c28);
   animation: animate3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -80,7 +83,7 @@
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, #f28c28);
   animation: animate4 1s linear infinite;
   animation-delay: 0.75s;
 }

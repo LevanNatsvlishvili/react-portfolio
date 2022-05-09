@@ -10,7 +10,6 @@ const staticPositions = {
 const Timeline = (props) => {
   const { companies, handleCompany, curr } = props;
   const [positions, setPositions] = useState([]);
-  console.log(companies.length);
 
   const calculateDotPositions = () => {
     if (companies.length <= 4) {
@@ -34,6 +33,7 @@ const Timeline = (props) => {
 
   useEffect(() => {
     setPositions(calculateDotPositions());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -60,13 +60,15 @@ const TimelineDot = ({ company, isLast, active, onClick }) => (
     style={isLast ? { right: 0 } : { left: `${company.position}%` }}
     className="absolute -top-9 flex flex-col items-center cursor-pointer"
   >
-    <h1 className="text-white text-xl mb-1">{company.timelineTitle}</h1>
+    <h1 className="text-white text-base sm:text-xl mb-1">
+      {company.timelineTitle}
+    </h1>
     <div
       className={`w-4 h-4 ${
         active ? 'bg-orange' : 'bg-grey-text'
-      } rounded-1/2 mt-0.5 `}
+      } rounded-1/2 mt-1 sm:mt-0.5 `}
     />
-    <p className="text-grey-text text-base mt-2 firago-light">
+    <p className="text-grey-text text-sm sm:text-base mt-2 firago-light">
       [2021 - Present]
     </p>
   </div>
