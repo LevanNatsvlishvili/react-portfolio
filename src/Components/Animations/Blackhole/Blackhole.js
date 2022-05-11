@@ -3,7 +3,7 @@ import React from 'react';
 function Blackhole({ shouldDisplay }) {
   return (
     <div
-      className={`absolute top-0 left-1/4 -z-10 ${
+      className={`absolute top-0 left-0 lg:left-1/4 -z-10 ${
         shouldDisplay ? 'blackhole-load' : ''
       }`}
     >

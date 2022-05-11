@@ -64,7 +64,10 @@ const Experience = () => {
         companies={companies}
         curr={curr}
       />
-      <div ref={ref} className="overflow-hidden h-96 sm:h-48 pl-2 mt-8 ">
+      <div
+        ref={ref}
+        className="overflow-hidden h-96 sm:h-48 pl-2 mt-4 sm:mt-8 "
+      >
         <div
           style={{ transform: `translateY(-${curr * scrollHeight}rem)` }}
           className="px-2 -ml-2 transition duration-500"

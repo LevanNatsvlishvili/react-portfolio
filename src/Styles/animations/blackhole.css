@@ -200,3 +200,10 @@ bh-audio {
 }
 
 /* * {  animation: stop !important; } */
+
+@media (max-width: 1024px) {
+  bh-shadow {
+    height: 40vh;
+    width: 40vh;
+  }
+}
