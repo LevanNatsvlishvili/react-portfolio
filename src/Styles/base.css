@@ -57,18 +57,20 @@ body {
   left: -50%;
   background-image: url(/public/images/background/star.svg);
   transition: 3000ms;
-}
-.star-1::after {
   transform: rotate(30deg);
 }
-.star-2::after {
+
+.star-1::after {
   transform: rotate(60deg);
 }
-.star-3::after {
+.star-2::after {
   transform: rotate(90deg);
 }
-.star-4::after {
+.star-3::after {
   transform: rotate(120deg);
+}
+.star-4::after {
+  transform: rotate(150deg);
 }
 
 /* nav menu styles */
