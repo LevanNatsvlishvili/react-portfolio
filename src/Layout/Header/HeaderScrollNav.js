@@ -13,27 +13,69 @@ function HeaderScrollNav(props) {
   };
 
   return (
-    <div className="fixed top-1/2 transform -translate-y-1/2 ml-10 border-white">
-      {pages.map((page) => (
-        <div
-          key={page}
-          className={clsx(
-            'py-2 py-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
-            {
-              'nav-active': currView === page,
-            }
-          )}
-          onClick={() => handleNavigation(page)}
-        >
-          <div className="absolute bg-white rounded-full h-1.5 w-1.5"></div>
-          <div className="absolute bg-white duration-300"></div>
-          <div className="absolute bg-white duration-300"></div>
-          <div className="absolute rotate-45 bg-white duration-300"></div>
-          <div className="absolute -rotate-45 bg-white duration-300"></div>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="hidden sm:block">
+        <DesktopWidth
+          pages={pages}
+          handleNavigation={handleNavigation}
+          currView={currView}
+        />
+      </div>
+      <div className=" sm:hidden">
+        <MobileWidth
+          pages={pages}
+          handleNavigation={handleNavigation}
+          currView={currView}
+        />
+      </div>
+    </>
   );
 }
+
+const MobileWidth = ({ pages, handleNavigation, currView }) => (
+  <div className="fixed bottom-16 flex transform left-1/2 -translate-x-1/2  border-white">
+    {pages.map((page) => (
+      <div
+        key={page}
+        className={clsx(
+          ' px-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
+          {
+            'nav-active': currView === page,
+          }
+        )}
+        onClick={() => handleNavigation(page)}
+      >
+        <div className="absolute bg-white rounded-full h-1.5 w-1.5"></div>
+        <div className="absolute bg-white duration-300"></div>
+        <div className="absolute bg-white duration-300"></div>
+        <div className="absolute rotate-45 bg-white duration-300"></div>
+        <div className="absolute -rotate-45 bg-white duration-300"></div>
+      </div>
+    ))}
+  </div>
+);
+
+const DesktopWidth = ({ pages, handleNavigation, currView }) => (
+  <div className="fixed top-1/2 transform -translate-y-1/2 ml-10 border-white">
+    {pages.map((page) => (
+      <div
+        key={page}
+        className={clsx(
+          'py-2 py-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
+          {
+            'nav-active': currView === page,
+          }
+        )}
+        onClick={() => handleNavigation(page)}
+      >
+        <div className="absolute bg-white rounded-full h-1.5 w-1.5"></div>
+        <div className="absolute bg-white duration-300"></div>
+        <div className="absolute bg-white duration-300"></div>
+        <div className="absolute rotate-45 bg-white duration-300"></div>
+        <div className="absolute -rotate-45 bg-white duration-300"></div>
+      </div>
+    ))}
+  </div>
+);
 
 export default HeaderScrollNav;
