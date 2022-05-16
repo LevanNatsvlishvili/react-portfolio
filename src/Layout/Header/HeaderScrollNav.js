@@ -32,19 +32,6 @@ function HeaderScrollNav(props) {
           <div className="absolute -rotate-45 bg-white duration-300"></div>
         </div>
       ))}
-      {/* {pages.map((page) => (
-        <div
-          key={page}
-          className="py-2 my-4 cursor-pointer"
-          onClick={() => handleNavigation(page)}
-        >
-          <div
-            className={clsx('bg-white h-0.5 w-6 duration-300 ', {
-              'nav-active': currView === page,
-            })}
-          ></div>
-        </div>
-      ))} */}
     </div>
   );
 }

@@ -20,7 +20,7 @@ function HeaderContactLinks(props) {
   };
 
   return (
-    <div className="flex items-center w-full fixed w-full px-10 pt-10 z-50">
+    <div className="flex items-center w-screen fixed px-10 pt-10 z-50">
       <div>
         <div className="flex items-center mr-16">
           <SocialLink

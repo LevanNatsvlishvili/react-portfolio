@@ -206,4 +206,7 @@ bh-audio {
     height: 40vh;
     width: 40vh;
   }
+  .blackhole-load {
+    animation-duration: 0s;
+  }
 }

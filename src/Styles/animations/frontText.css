@@ -98,3 +98,9 @@
   top: 0;
   transform: translate(0, -100%);
 }
+
+@media (max-width: 1224px) {
+  .animated-title > div {
+    width: 100%;
+  }
+}

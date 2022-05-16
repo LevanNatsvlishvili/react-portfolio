@@ -11,6 +11,7 @@ module.exports = {
       spacing: {
         100: '30rem',
         '600px': '600px',
+        '1/5': '20%',
       },
       borderRadius: {
         '1/2': '50%',
