@@ -94,12 +94,12 @@ function SectionScrolling(props) {
         }
       } else {
         if (yDiff > 0) {
-          /* up swipe */
-          setDirection('up');
-          setLoading(true);
-        } else {
           /* down swipe */
           setDirection('down');
+          setLoading(true);
+        } else {
+          /* up swipe */
+          setDirection('up');
           setLoading(true);
         }
       }
