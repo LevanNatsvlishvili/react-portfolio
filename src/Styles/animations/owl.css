@@ -191,3 +191,10 @@
     transform: rotate(-3deg);
   }
 }
+
+@media (max-width: 640px) {
+  .owl {
+    animation: none;
+    transform: translateX(-100px);
+  }
+}

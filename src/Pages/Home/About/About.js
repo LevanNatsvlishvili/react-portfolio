@@ -9,7 +9,7 @@ function About() {
 
   return (
     <section>
-      <div className="absolute left-40 z-10">
+      <div className="absolute left-1/5 sm:left-40 z-10">
         <FrontText
           shouldDisplay={currView === 1}
           heading1="About Me"
@@ -20,7 +20,7 @@ function About() {
         </div>
       </div>
       <div
-        className={`w-1/2 h-1/2 ml-100 relative glass-effect ${
+        className={`w-[90%] sm:w-1/2 h-[70%] sm:h-1/2 sm:ml-100 relative glass-effect ${
           currView === 1 ? 'glass-effect-active' : ''
         } `}
       >

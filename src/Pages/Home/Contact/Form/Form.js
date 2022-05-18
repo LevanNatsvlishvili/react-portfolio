@@ -60,16 +60,9 @@ function Contact(props) {
 
   return (
     <>
-      <div id="app" data-state="chaos">
-        <canvas id="canvas"></canvas>
-        <div id="meterbox">
-          <canvas id="meter" width="25" height="270"></canvas>
-        </div>
-      </div>
-
       <div
         ref={formRef}
-        className="signup-form styled-card right-36 w-1/3 z-20 absolute flex-col flex justify-center"
+        className="signup-form styled-card md:right-36 top-1/4 lg:top-auto w-[85%] lg:w-1/3 z-20 absolute flex-col flex justify-center"
       >
         <svg
           className="owl-root absolute left-0 -z-10"

@@ -11,8 +11,7 @@ function SectionScrolling(props) {
     { name: 'welcome', axis: 'translateY(0vh)' },
     { name: 'about', axis: 'translateY(-100vh)' },
     { name: 'projects', axis: 'translateY(-200vh)' },
-    { name: 'skills', axis: 'translateY(-300vh)' },
-    { name: 'contact', axis: 'translateY(-400vh)' },
+    { name: 'contact', axis: 'translateY(-300vh)' },
   ];
 
   useEffect(() => {

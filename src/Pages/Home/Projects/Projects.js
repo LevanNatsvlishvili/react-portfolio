@@ -9,7 +9,7 @@ function About() {
 
   return (
     <section>
-      <div className="absolute left-40 z-10">
+      <div className="absolute left-1/5 sm:left-40 z-10">
         <FrontText
           shouldDisplay={currView === 2}
           heading1="Projects"

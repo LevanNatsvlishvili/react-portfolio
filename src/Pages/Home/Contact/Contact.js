@@ -1,5 +1,4 @@
 import FrontText from 'Components/Animations/FrontText';
-import Button from 'Components/Button';
 import React from 'react';
 import useStore from 'Store/Context';
 import Form from './Form';
@@ -9,17 +8,14 @@ function Contact() {
 
   return (
     <section>
-      <div className="absolute left-40 z-10">
+      <div className="hidden lg:block absolute left-1/5 md:left-40 sm: z-10">
         <FrontText
-          shouldDisplay={currView === 4}
+          shouldDisplay={currView === 3}
           heading1="Contact"
           bottom="L.nats51@yahoo.com"
         />
-        <div>
-          <Button>Read More</Button>
-        </div>
       </div>
-      <Form shouldDisplay={currView === 4} />
+      <Form shouldDisplay={currView === 3} />
     </section>
   );
 }

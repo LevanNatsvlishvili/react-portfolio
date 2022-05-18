@@ -7,7 +7,7 @@ function Welcome() {
   const { currView } = useStore();
   return (
     <section>
-      <div className="w-full absolute left-1/5 sm:left-40">
+      <div className="w-full absolute left-[22.5%] top-1/4 sm:top-auto sm:left-40">
         <FrontText
           shouldDisplay={currView === 0}
           heading1="Levan"
