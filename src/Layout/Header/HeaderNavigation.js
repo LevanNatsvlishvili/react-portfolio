@@ -9,7 +9,7 @@ function HeaderNavigation(props) {
   return (
     <nav
       className={clsx(
-        'navmenu ease-linear flex justify-center items-center text-8xl text-center absolute z-20',
+        'navmenu ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20',
         {
           '-translate-y-[100vh]': !navMenu,
         }
@@ -24,9 +24,6 @@ function HeaderNavigation(props) {
         </li>
         <li className="my-10">
           <Link to={paths.projects}>Projects</Link>
-        </li>
-        <li className="my-10">
-          <Link to={paths.skills}>Skill Set</Link>
         </li>
       </ul>
     </nav>

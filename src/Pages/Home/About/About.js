@@ -20,7 +20,7 @@ function About() {
         </div>
       </div>
       <div
-        className={`w-[90%] sm:w-1/2 h-[70%] sm:h-1/2 sm:ml-100 relative glass-effect ${
+        className={`w-[90%] lg:w-1/2 h-[70%] lg:h-1/2 lg:ml-100 relative glass-effect ${
           currView === 1 ? 'glass-effect-active' : ''
         } `}
       >

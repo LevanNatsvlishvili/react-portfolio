@@ -15,7 +15,7 @@ function Slider(props) {
 
   return (
     <div
-      className={`w-[90%] sm:w-3/4 lg:w-1/2  h-[70%] lg:h-1/2 lg:ml-100 relative glass-effect overflow-hidden rounded-xl ${
+      className={`w-[90%] sm:w-3/4 lg:w-1/2 h-[70%] lg:h-1/2 lg:ml-100 relative glass-effect overflow-hidden rounded-xl ${
         shouldDisplay ? 'glass-effect-active' : ''
       } `}
     >

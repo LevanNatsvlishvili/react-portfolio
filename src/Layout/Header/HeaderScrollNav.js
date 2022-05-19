@@ -14,14 +14,14 @@ function HeaderScrollNav(props) {
 
   return (
     <>
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <DesktopWidth
           pages={pages}
           handleNavigation={handleNavigation}
           currView={currView}
         />
       </div>
-      <div className=" sm:hidden">
+      <div className="lg:hidden">
         <MobileWidth
           pages={pages}
           handleNavigation={handleNavigation}
@@ -33,12 +33,12 @@ function HeaderScrollNav(props) {
 }
 
 const MobileWidth = ({ pages, handleNavigation, currView }) => (
-  <div className="fixed bottom-16 flex transform left-1/2 -translate-x-1/2  border-white">
+  <div className="fixed bottom-16 flex transform left-1/2 -translate-x-1/2 h-10 border-white">
     {pages.map((page) => (
       <div
         key={page}
         className={clsx(
-          ' px-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
+          ' px-8 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
           {
             'nav-active': currView === page,
           }
