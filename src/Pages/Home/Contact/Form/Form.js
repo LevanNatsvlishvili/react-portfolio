@@ -65,7 +65,7 @@ function Contact(props) {
         className="signup-form styled-card md:right-36 top-1/4 lg:top-auto w-[85%] lg:w-1/3 z-20 absolute flex-col flex justify-center"
       >
         <svg
-          className="owl-root absolute left-0 -z-10"
+          className="owl-root absolute left-0 -z-10 hidden sm:block"
           id="svgowl"
           xmlns="http://www.w3.org/2000/svg"
           viewBox={viewBox}
