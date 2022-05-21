@@ -20,7 +20,7 @@ function Slider(props) {
       } `}
     >
       <div
-        style={{ width: `${images.length * 600}px` }}
+        style={{ width: `${images.length}00%` }}
         className="flex transition slider-auto h-full"
       >
         {images.map((image, index) => (

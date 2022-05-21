@@ -176,12 +176,12 @@ body {
 
 @-webkit-keyframes translateinfinite {
   100% {
-    transform: translateX(calc(-2000px));
+    transform: translateX(calc(-50%));
   }
 }
 @keyframes translateinfinite {
   100% {
-    transform: translateX(calc(-2000px));
+    transform: translateX(calc(-50%));
   }
 }
 
