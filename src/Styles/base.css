@@ -47,7 +47,7 @@ body {
 }
 
 /* wrapper */
-
+/* 
 .star-container::after {
   content: '';
   position: absolute;
@@ -55,8 +55,9 @@ body {
   height: 200%;
   top: -50%;
   left: -50%;
-  background-image: url(/public/images/background/star.svg);
+  background-image: url(/public/images/background/stars.svg);
   transition: 3000ms;
+  filter: blur(1.25px);
 }
 
 .star-1::after {
@@ -70,6 +71,36 @@ body {
 }
 .star-4::after {
   transform: rotate(120deg);
+} */
+
+/* social media menu icons  */
+
+.clouds {
+  width: 10000px;
+  height: 100%;
+  background: transparent
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png')
+    repeat;
+  background-size: 1000px 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+
+  /* -moz-animation:move-background 150s linear infinite;
+  -ms-animation:move-background 150s linear infinite;
+  -o-animation:move-background 150s linear infinite;
+  -webkit-animation:move-background 150s linear infinite;
+  animation:move-background 150s linear infinite; */
+}
+
+.socmedia-icon {
+  transition: 300ms;
+}
+.socmedia-icon:hover {
+  filter: invert(56%) sepia(68%) saturate(955%) hue-rotate(345deg)
+    brightness(103%) contrast(90%);
 }
 
 /* nav menu styles */
@@ -113,7 +144,7 @@ body {
 }
 
 .navmenu {
-  background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+  /* background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a); */
   height: 100vh;
   width: 100%;
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);

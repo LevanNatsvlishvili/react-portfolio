@@ -9,12 +9,30 @@ function HeaderNavigation(props) {
   return (
     <nav
       className={clsx(
-        'navmenu ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20',
+        'navmenu overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20',
         {
           '-translate-y-[100vh]': !navMenu,
         }
       )}
     >
+      <div className="cloud-circle cloud-1"></div>
+      <div className="cloud-circle cloud-2"></div>
+      <div className="cloud-circle cloud-3"></div>
+      <div className="cloud-circle cloud-4"></div>
+      <div className="cloud-circle cloud-5"></div>
+      <div className="cloud-circle cloud-6"></div>
+      <div className="cloud-circle cloud-7"></div>
+      <div className="cloud-circle cloud-8"></div>
+      <svg width="0" height="0">
+        <filter id="filter">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency=".01"
+            numOctaves="10"
+          />
+          <feDisplacementMap in="SourceGraphic" scale="180" />
+        </filter>
+      </svg>
       <ul>
         <li className="my-10">
           <Link to={paths.home}>Home</Link>

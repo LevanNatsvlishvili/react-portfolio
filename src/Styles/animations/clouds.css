@@ -1,0 +1,57 @@
+.cloud-circle {
+  width: 500px;
+  height: 275px;
+  border-radius: 50%;
+  filter: url(#filter);
+  box-shadow: 400px 400px 60px 0px #277;
+  position: absolute;
+}
+
+.cloud-1 {
+  top: -47%;
+  left: -30%;
+}
+.cloud-2 {
+  top: -38%;
+  left: -6%;
+  transform: rotate(45deg);
+  width: 40%;
+  height: 45%;
+}
+.cloud-3 {
+  top: 20%;
+  left: -25%;
+  transform: rotate(322deg);
+  width: 55%;
+  height: 60%;
+}
+.cloud-4 {
+  top: 30%;
+  left: 19%;
+  transform: rotate(315deg);
+  width: 50%;
+  height: 54%;
+}
+.cloud-5 {
+  top: -49%;
+  left: -6%;
+  height: 45%;
+}
+.cloud-6 {
+  top: -50%;
+  left: 24%;
+  height: 46%;
+  width: 60%;
+}
+.cloud-7 {
+  top: 10%;
+  left: -38%;
+  height: 51%;
+  width: 75%;
+}
+.cloud-8 {
+  top: 10%;
+  left: 10%;
+  height: 51%;
+  width: 75%;
+}
