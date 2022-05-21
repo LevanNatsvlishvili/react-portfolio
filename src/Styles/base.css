@@ -175,19 +175,25 @@ body {
 /* Slider */
 
 @-webkit-keyframes translateinfinite {
+  0% {
+    transform: translateX(0);
+  }
   100% {
-    transform: translateX(calc(-50%));
+    transform: translateX(calc(-100%));
   }
 }
 @keyframes translateinfinite {
+  0% {
+    transform: translateX(0);
+  }
   100% {
-    transform: translateX(calc(-50%));
+    transform: translateX(calc(-100%));
   }
 }
 
 .slider-auto {
-  animation: translateinfinite 20s linear infinite;
-  animation: translateinfinite 20s linear infinite;
+  animation: translateinfinite 40s linear infinite;
+  animation: translateinfinite 40s linear infinite;
 }
 
 .styled-card {
