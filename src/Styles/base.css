@@ -186,8 +186,8 @@ body {
 }
 
 .slider-auto {
-  animation: translateinfinite 10s linear infinite;
-  animation: translateinfinite 10s linear infinite;
+  animation: translateinfinite 20s linear infinite;
+  animation: translateinfinite 20s linear infinite;
 }
 
 .styled-card {

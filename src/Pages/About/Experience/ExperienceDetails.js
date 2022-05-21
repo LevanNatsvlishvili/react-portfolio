@@ -31,7 +31,7 @@ const ExperienceDetails = (props) => {
         </div>
       </div>
       <div className="col-span-12 sm:col-span-5 styled-card p-4">
-        <div className="text-grey-text text-sm scroll-bar overflow-y-auto overflow-x-hidden h-32 firago-light">
+        <div className="text-grey-text text-sm scroll-bar overflow-y-auto overflow-x-hidden h-32 firago-thin">
           {description}
         </div>
       </div>

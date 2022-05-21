@@ -7,17 +7,18 @@
   transition: 0.5s;
   letter-spacing: 4px;
   overflow: hidden;
-  color: #f28c28;
+  color: rgba(242, 140, 40, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
 }
 .neon-button:hover {
-  background: #f28c28;
+  background: rgba(242, 140, 40, 0.75);
   color: #072142;
-  box-shadow: 0 0 5px #f28c28, 0 0 25px #f28c28, 0 0 50px #f28c28,
-    0 0 200px #f28c28;
+  box-shadow: 0 0 5px rgba(242, 140, 40, 0.75),
+    0 0 25px rgba(242, 140, 40, 0.75), 0 0 50px rgba(242, 140, 40, 0.75),
+    0 0 200px rgba(242, 140, 40, 0.75);
 }
 
 .neon-button span {
@@ -29,8 +30,8 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #f28c28);
-  animation: animate1 1s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(242, 140, 40, 0.75));
+  animation: animate1 1.6s linear infinite;
 }
 @keyframes animate1 {
   0% {
@@ -46,9 +47,9 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #f28c28);
-  animation: animate2 1s linear infinite;
-  animation-delay: 0.25s;
+  background: linear-gradient(180deg, transparent, rgba(242, 140, 40, 0.75));
+  animation: animate2 1.6s linear infinite;
+  animation-delay: 0.4s;
 }
 @keyframes animate2 {
   0% {
@@ -64,9 +65,9 @@
   right: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #f28c28);
-  animation: animate3 1s linear infinite;
-  animation-delay: 0.5s;
+  background: linear-gradient(270deg, transparent, rgba(242, 140, 40, 0.75));
+  animation: animate3 1.6s linear infinite;
+  animation-delay: 0.8s;
 }
 @keyframes animate3 {
   0% {
@@ -83,9 +84,9 @@
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #f28c28);
-  animation: animate4 1s linear infinite;
-  animation-delay: 0.75s;
+  background: linear-gradient(360deg, transparent, rgba(242, 140, 40, 0.75));
+  animation: animate4 1.6s linear infinite;
+  animation-delay: 1.2s;
 }
 @keyframes animate4 {
   0% {
