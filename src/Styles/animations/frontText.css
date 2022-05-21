@@ -31,7 +31,8 @@
   color: #222;
   font-family: Roboto, Arial, sans-serif;
   position: relative;
-  width: 90vmin;
+  width: 50%;
+  /* width: 90vmin; */
 }
 .animated-title > div {
   overflow: hidden;
@@ -96,6 +97,9 @@
 
 @media (max-width: 1224px) {
   .animated-title > div {
+    width: 100%;
+  }
+  .animated-title {
     width: 100%;
   }
 }

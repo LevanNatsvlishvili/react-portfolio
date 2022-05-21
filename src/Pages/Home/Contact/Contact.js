@@ -8,7 +8,7 @@ function Contact() {
 
   return (
     <section>
-      <div className="hidden lg:block absolute left-1/5 md:left-40 sm: z-10">
+      <div className="w-full hidden lg:block absolute left-1/5 md:left-40 sm: z-10">
         <FrontText
           shouldDisplay={currView === 3}
           heading1="Contact"
