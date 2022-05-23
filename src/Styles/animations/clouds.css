@@ -6,7 +6,7 @@
   box-shadow: 400px 300px 210px 0px #0a1d25, 400px 300px 160px 0px #354950,
     400px 300px 130px 0px rgba(10, 28, 36, 0.511), 400px 300px 120px 0px #8b9a9e;
   position: absolute;
-  opacity: 0.95;
+  opacity: 0.7;
 }
 
 .nav-lightning::before {
@@ -54,6 +54,21 @@
   53.5% {
     opacity: 1;
   }
+  55% {
+    opacity: 0.6;
+  }
+  57% {
+    opacity: 1;
+  }
+  59% {
+    opacity: 0.6;
+  }
+  64% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
   70% {
     opacity: 0.2;
   }
@@ -61,33 +76,6 @@
     opacity: 0.2;
   }
   100% {
-    opacity: 0;
-  }
-}
-
-@keyframes lightning-strike {
-  0% {
-    opacity: 0;
-  }
-  4.60% {
-    opacity: 0;
-  }
-  4.90% {
-    opacity: 0.2;
-  }
-  5% {
-    opacity: 0.8;
-  }
-  5.75% {
-    opacity: 0.6;
-  }
-  6% {
-    opacity: 1;
-  }
-  7% {
-    opacity: 0.2;
-  }
-  8% {
     opacity: 0;
   }
 }
@@ -129,13 +117,13 @@
   width: 60%;
 }
 .cloud-7 {
-  top: 10%;
+  top: 21%;
   left: -38%;
   height: 51%;
   width: 75%;
 }
 .cloud-8 {
-  top: 10%;
+  top: 15%;
   left: 10%;
   height: 51%;
   width: 75%;
