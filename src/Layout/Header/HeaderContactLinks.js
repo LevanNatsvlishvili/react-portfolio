@@ -32,11 +32,11 @@ const NavigationLink = ({ url, icon }) => (
 );
 
 function HeaderContactLinks(props) {
-  const { navMenu, setNavMenu } = props;
+  const { navMenu, setNavMenu, handleNav } = props;
 
-  const handleNav = () => {
-    setNavMenu(!navMenu);
-  };
+  // const handleNav = () => {
+  //   setNavMenu(!navMenu);
+  // };
 
   return (
     <div className="flex items-center w-screen fixed px-6 sm:px-10 pt-6 sm:pt-10 z-50">

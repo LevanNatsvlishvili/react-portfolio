@@ -20,6 +20,43 @@
   animation-delay: 3s;
 }
 
+.navbar-hidden {
+  opacity: 1;
+  visibility: visible;
+  animation: navbar-disappear-animation 1s;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+}
+.navbar-appear {
+  opacity: 0;
+  visibility: hidden;
+  animation: navbar-appear-animation 1s;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navbar-appear-animation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes navbar-disappear-animation {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @keyframes sky {
   0% {
     opacity: 0.2;

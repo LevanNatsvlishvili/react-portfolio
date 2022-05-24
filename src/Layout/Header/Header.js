@@ -7,9 +7,17 @@ function Head(props) {
   const { currView, setCurrView, shouldScrollDisplay } = props;
   const [navMenu, setNavMenu] = useState(false);
 
+  const handleNav = () => {
+    setNavMenu(!navMenu);
+  };
+
   return (
     <header className="fixed w-full z-20">
-      <HeaderContactLinks navMenu={navMenu} setNavMenu={setNavMenu} />
+      <HeaderContactLinks
+        navMenu={navMenu}
+        setNavMenu={setNavMenu}
+        handleNav={handleNav}
+      />
 
       <HeaderNavigation navMenu={navMenu} />
 

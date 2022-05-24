@@ -9,23 +9,24 @@ function HeaderNavigation(props) {
   return (
     <nav
       className={clsx(
-        'navmenu bg-global overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20',
+        `navmenu navbar-hidden bg-global overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20`,
         {
-          '-translate-y-[100vh]': !navMenu,
           'nav-lightning': navMenu,
+          'navbar-appear': navMenu,
+          'navbar-hidden': !navMenu,
         }
       )}
     >
       <div className={`cloud-circle cloud-1`}></div>
       <div className={`cloud-circle cloud-2`}></div>
       <div className={`cloud-circle cloud-3`}></div>
-      <div className={`cloud-circle cloud-4`}></div>
-      <div className={`cloud-circle cloud-5`}></div>
+      {/* <div className={`cloud-circle cloud-4`}></div> */}
+      {/* <div className={`cloud-circle cloud-5`}></div> */}
       <div className={`cloud-circle cloud-6`}></div>
-      <div className={`cloud-circle cloud-7`}></div>
+      {/* <div className={`cloud-circle cloud-7`}></div> */}
       <div className={`cloud-circle cloud-8`}></div>
-      <div className={`cloud-circle cloud-9`}></div>
-      <div className={`cloud-circle cloud-10`}></div>
+      {/* <div className={`cloud-circle cloud-9`}></div> */}
+      {/* <div className={`cloud-circle cloud-10`}></div> */}
       <svg width="0" height="0">
         <filter id="filter">
           <feTurbulence
@@ -36,7 +37,7 @@ function HeaderNavigation(props) {
           <feDisplacementMap in="SourceGraphic" scale="180" />
         </filter>
       </svg>
-      <ul>
+      <ul className="relative">
         <li className="my-10">
           <Link to={paths.home}>Home</Link>
         </li>
