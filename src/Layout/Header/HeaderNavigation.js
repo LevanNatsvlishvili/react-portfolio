@@ -17,7 +17,7 @@ function HeaderNavigation(props) {
         }
       )}
     >
-      <div className={`cloud-circle cloud-1`}></div>
+      {/* <div className={`cloud-circle cloud-1`}></div> */}
       <div className={`cloud-circle cloud-2`}></div>
       <div className={`cloud-circle cloud-3`}></div>
       {/* <div className={`cloud-circle cloud-4`}></div> */}

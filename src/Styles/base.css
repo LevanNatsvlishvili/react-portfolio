@@ -108,10 +108,11 @@ body {
 
 .socmedia-icon {
   transition: 300ms;
+  filter: ;
 }
 .socmedia-icon:hover {
-  filter: invert(56%) sepia(68%) saturate(955%) hue-rotate(345deg)
-    brightness(103%) contrast(90%);
+  filter: drop-shadow(0px 2px 10px rgb(242, 140, 40)) invert(56%) sepia(68%)
+    saturate(955%) hue-rotate(345deg) brightness(103%) contrast(90%);
 }
 
 /* nav menu styles */
