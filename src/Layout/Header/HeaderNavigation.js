@@ -9,10 +9,10 @@ function HeaderNavigation(props) {
   return (
     <nav
       className={clsx(
-        `navmenu navbar-hidden bg-global overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20`,
+        `navmenu  bg-global overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-20`,
         {
           'nav-lightning': navMenu,
-          'navbar-appear': navMenu,
+          'navbar-visible': navMenu,
           'navbar-hidden': !navMenu,
         }
       )}
