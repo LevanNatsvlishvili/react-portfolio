@@ -149,3 +149,9 @@
   height: 51%;
   width: 38%;
 }
+
+@media (max-width: 768px) {
+  .nav-lightning::before {
+    animation: none;
+  }
+}
