@@ -3,7 +3,6 @@ import React from 'react';
 import AboutSummary from './AboutSummary';
 import Experience from './Experience';
 import Tabs from './Tabs';
-import { Link } from 'react-router-dom';
 import { paths } from 'Routing/Paths';
 import useStore from 'Store/Context';
 
