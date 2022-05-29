@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import HeaderContactLinks from './HeaderContactLinks';
 import HeaderNavigation from './HeaderNavigation';
+import HeaderNavigationMobile from './HeaderNavigationMobile';
 import HeaderScrollNav from './HeaderScrollNav';
 
 function Head(props) {
@@ -19,7 +20,12 @@ function Head(props) {
         handleNav={handleNav}
       />
 
-      <HeaderNavigation navMenu={navMenu} />
+      <div className="hidden md:block">
+        <HeaderNavigation navMenu={navMenu} />
+      </div>
+      <div className="block md:hidden">
+        <HeaderNavigationMobile navMenu={navMenu} />
+      </div>
 
       {shouldScrollDisplay && (
         <HeaderScrollNav currView={currView} setCurrView={setCurrView} />

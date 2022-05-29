@@ -90,64 +90,30 @@
 }
 
 .cloud-1 {
-  top: -47%;
-  left: -30%;
-}
-.cloud-2 {
   top: -38%;
   left: -6%;
   transform: rotate(45deg);
   width: 40%;
   height: 45%;
 }
-.cloud-3 {
+.cloud-2 {
   top: 20%;
   left: -25%;
   transform: rotate(322deg);
   width: 55%;
   height: 60%;
 }
-.cloud-4 {
-  top: 30%;
-  left: 19%;
-  transform: rotate(315deg);
-  width: 50%;
-  height: 54%;
-}
-.cloud-5 {
-  top: -49%;
-  left: -6%;
-  height: 45%;
-}
-.cloud-6 {
+.cloud-3 {
   top: -50%;
   left: 24%;
   height: 46%;
   width: 60%;
 }
-.cloud-7 {
-  top: 21%;
-  left: -38%;
-  height: 51%;
-  width: 75%;
-}
-.cloud-8 {
+.cloud-4 {
   top: 15%;
   left: 10%;
   height: 51%;
   width: 75%;
-}
-.cloud-9 {
-  top: 5%;
-  left: -35%;
-  height: 51%;
-  width: 30%;
-}
-.cloud-10 {
-  top: -16%;
-  left: 10%;
-  height: 51%;
-  width: 38%;
 }
 
 @media (max-width: 768px) {
