@@ -22,9 +22,9 @@ function HeaderNavigation(props) {
       <div className={`cloud-circle cloud-3`}></div>
       {/* <div className={`cloud-circle cloud-4`}></div> */}
       {/* <div className={`cloud-circle cloud-5`}></div> */}
-      <div className={`cloud-circle cloud-6`}></div>
+      <div className={`cloud-circle invisible lg:visible cloud-6`}></div>
       {/* <div className={`cloud-circle cloud-7`}></div> */}
-      <div className={`cloud-circle cloud-8`}></div>
+      <div className={`cloud-circle invisible lg:visible cloud-8`}></div>
       {/* <div className={`cloud-circle cloud-9`}></div> */}
       {/* <div className={`cloud-circle cloud-10`}></div> */}
       <svg width="0" height="0">
