@@ -6,13 +6,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <StoreContextProvider>
-      <Router>
+    <Router>
+      <StoreContextProvider>
         <Layout>
           <RenderRoutes />
         </Layout>
-      </Router>
-    </StoreContextProvider>
+      </StoreContextProvider>
+    </Router>
   );
 }
 

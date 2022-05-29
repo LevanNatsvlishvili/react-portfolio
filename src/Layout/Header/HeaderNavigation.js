@@ -1,10 +1,20 @@
 import clsx from 'clsx';
+import Button from 'Components/Button';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { paths } from 'Routing/Paths';
 
 function HeaderNavigation(props) {
-  const { navMenu } = props;
+  const { navMenu, handleNav } = props;
+  const navigate = useNavigate();
+
+  const handleClick = (path) => {
+    navigate(path);
+
+    setTimeout(() => {
+      handleNav();
+    }, 300);
+  };
 
   return (
     <nav
@@ -19,8 +29,8 @@ function HeaderNavigation(props) {
     >
       <div className={`cloud-circle cloud-1`}></div>
       <div className={`cloud-circle cloud-2`}></div>
-      <div className={`cloud-circle invisible lg:visible cloud-3`}></div>
-      <div className={`cloud-circle invisible lg:visible cloud-4`}></div>
+      <div className={`cloud-circle hidden lg:block cloud-3`}></div>
+      <div className={`cloud-circle hidden lg:block cloud-4`}></div>
       <svg width="0" height="0">
         <filter id="filter">
           <feTurbulence
@@ -33,13 +43,14 @@ function HeaderNavigation(props) {
       </svg>
       <ul className="relative">
         <li className="my-10">
-          <Link to={paths.home}>Home</Link>
+          {/* <Link onClick={handleClick}>Home</Link> */}
+          <button onClick={() => handleClick(paths.home)}>Home</button>
         </li>
         <li className="my-10">
-          <Link to={paths.about}>About Me</Link>
+          <button onClick={() => handleClick(paths.about)}>About Me</button>
         </li>
         <li className="my-10">
-          <Link to={paths.projects}>Projects</Link>
+          <button onClick={() => handleClick(paths.projects)}>Projects</button>
         </li>
       </ul>
     </nav>

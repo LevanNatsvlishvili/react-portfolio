@@ -2,7 +2,7 @@ import React from 'react';
 
 const Summary = () => {
   return (
-    <div className="styled-card w-full flex-col pt-12 h-full  p-5 flex items-center">
+    <div className="styled-card w-full flex-col pt-12 h-full p-5 flex items-center">
       <div className="about-image-container w-[200px] h-[200px] ">
         <img
           className="about-image-container-image"
@@ -16,7 +16,7 @@ const Summary = () => {
       <h1 className="pt-1 text-center pb-6 text-grey-text text-xl text-orange">
         Front-end Developer
       </h1>
-      <p className="text-grey-text p-2 text-center text-base scroll-bar firago-light lg:h-72 overflow-auto">
+      <p className="text-grey-text p-2 text-center text-base scroll-bar firago-light lg:h-80 overflow-auto">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

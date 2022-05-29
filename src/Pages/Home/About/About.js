@@ -5,10 +5,10 @@ import { paths } from 'Routing/Paths';
 import useStore from 'Store/Context';
 
 function About() {
-  const { currView } = useStore();
+  const { currView, handleNavigationLoading } = useStore();
 
   return (
-    <section>
+    <section className="relative">
       <div className="w-full absolute left-1/5 sm:left-40 z-10">
         <FrontText
           shouldDisplay={currView === 1}
@@ -16,7 +16,9 @@ function About() {
           bottom="Experience, Contracts and more..."
         />
         <div>
-          <Button to={paths.about}>Read More</Button>
+          <Button onClick={() => handleNavigationLoading(paths.about)}>
+            Read More
+          </Button>
         </div>
       </div>
       <div

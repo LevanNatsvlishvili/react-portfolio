@@ -1,11 +1,12 @@
 import FrontText from 'Components/Animations/FrontText';
 import Button from 'Components/Button';
 import React from 'react';
+import { paths } from 'Routing/Paths';
 import useStore from 'Store/Context';
 import Slider from './Slider';
 
 function About() {
-  const { currView } = useStore();
+  const { currView, handleNavigationLoading } = useStore();
 
   return (
     <section>
@@ -16,7 +17,9 @@ function About() {
           bottom="Portfolio"
         />
         <div>
-          <Button>Read More</Button>
+          <Button onClick={() => handleNavigationLoading(paths.projects)}>
+            Read More
+          </Button>
         </div>
       </div>
       <Slider shouldDisplay={currView === 2} />

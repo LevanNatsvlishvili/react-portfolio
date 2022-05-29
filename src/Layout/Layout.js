@@ -3,6 +3,7 @@ import Scroll from './Scroll';
 import Header from './Header';
 import useStore from 'Store/Context';
 import { useLocation } from 'react-router-dom';
+import Loading from 'Components/Loading';
 
 function useQuery() {
   const location = useLocation();
@@ -13,7 +14,7 @@ function useQuery() {
 }
 
 const Layout = ({ children }) => {
-  const { currView, setCurrView } = useStore();
+  const { currView, setCurrView, loading } = useStore();
   const shouldScrollDisplay = useQuery();
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className={`star-container star-${currView}`}>
+      <Loading loading={loading} />
       <Header
         shouldScrollDisplay={shouldScrollDisplay || false}
         currView={currView}

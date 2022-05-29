@@ -21,7 +21,7 @@ function Head(props) {
       />
 
       <div className="hidden md:block">
-        <HeaderNavigation navMenu={navMenu} />
+        <HeaderNavigation navMenu={navMenu} handleNav={handleNav} />
       </div>
       <div className="block md:hidden">
         <HeaderNavigationMobile navMenu={navMenu} />
